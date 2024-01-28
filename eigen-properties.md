@@ -80,7 +80,6 @@ $$
 (x - \lambda_1)(x - \lambda_2) &= x^2 - (\lambda_2 + \lambda_1)x + \lambda_1\lambda_2 \\
 Ax^2 + Bx + C &= x^2 - (\lambda_2 + \lambda_1)x + \lambda_1\lambda_2
 \end{align*}
-
 $$
 
 so now we can clearly say that  $\lambda_1$ and $\lambda_2$ are sum of dialognal elements
@@ -257,9 +256,7 @@ $$
     $$
 
     $$
-
-        \lambda^4 - (a + f + k + p)\lambda^3 \\+ (af + ak + ap + fk + fp + kp - bce - bcf - bck - bde - bdf - bdp - ceh - cek - cep - dfh - dfk - dfp - ghi - ghk - ghp - jli - jlk - jlp - moi - mok - mop)\lambda^2 \\- (afk + afp + akp + fkp + bcef + bcek + bcep + bdef + bdek + bdep + cefk + cefp + cekp + defk + defp + dekp + efgh + efij + efik + efkl + efkp + fgij + fgik + fgil + fgkl + fgkp + ghij + ghik + ghil + ghkl + jlik + jlip + jlkp + jlmp + mokp)\lambda + \\ \\ (afkp + bcefk + bcefp + bcekp + bdefk + bdefp + bdekp + cefkp + defkp + efghk + efghp + efijp + efikp + efklp + fgijp + fgikp + fgklp + ghijp + ghikp + ghklp + jlikp + mokp) = 0
-
+    \lambda^4 - (a + f + k + p)\lambda^3 \\+ (af + ak + ap + fk + fp + kp - bce - bcf - bck - bde - bdf - bdp - ceh - cek - cep - dfh - dfk - dfp - ghi - ghk - ghp - jli - jlk - jlp - moi - mok - mop)\lambda^2 \\- (afk + afp + akp + fkp + bcef + bcek + bcep + bdef + bdek + bdep + cefk + cefp + cekp + defk + defp + dekp + efgh + efij + efik + efkl + efkp + fgij + fgik + fgil + fgkl + fgkp + ghij + ghik + ghil + ghkl + jlik + jlip + jlkp + jlmp + mokp)\lambda + \\ \\ (afkp + bcefk + bcefp + bcekp + bdefk + bdefp + bdekp + cefkp + defkp + efghk + efghp + efijp + efikp + efklp + fgijp + fgikp + fgklp + ghijp + ghikp + ghklp + jlikp + mokp) = 0
     $$
 
 There are some results we want to reach are the characteristic equations for 2x2, 3x3, 4x4, and 5x5 matrices in the form you mentioned:
@@ -283,7 +280,6 @@ There are some results we want to reach are the characteristic equations for 2x2
 - The characteristic equation for a 6x6 matrix A can be expressed as follows:
     $$
     \lambda^6 - \text{Tr}(A) \lambda^5 + \left(\frac{1}{2}[\text{Tr}(A)^2 - \text{Tr}(A^2)]\right) \lambda^4 - \left(\frac{1}{6}[\text{Tr}(A)^3 - 3\text{Tr}(A)\text{Tr}(A^2) + 2\text{Tr}(A^3)]\right) \lambda^3 + \left(\frac{1}{24}[\text{Tr}(A)^4 - 6\text{Tr}(A)^2\text{Tr}(A^2) + 8\text{Tr}(A)\text{Tr}(A^3) + 3\text{Tr}(A^2)^2 - 6\text{Tr}(A^4)]\right) \lambda^2 - \left(\frac{1}{120}[\text{Tr}(A)^5 - 10\text{Tr}(A)^3\text{Tr}(A^2) + 20\text{Tr}(A)^2\text{Tr}(A^3) + 30\text{Tr}(A)\text{Tr}(A^2)^2 - 60\text{Tr}(A^3)^2 + 120\text{Tr}(A^5)]\right) \lambda + \text{det}(A) = 0
-
     $$
 
 These equations can be used to find the eigenvalues of matrices of the respective sizes.
@@ -291,14 +287,11 @@ These equations can be used to find the eigenvalues of matrices of the respectiv
 Let
 
 $$
-
 A - \lambda I = \begin{pmatrix} a - \lambda & b & c \\ d & e - \lambda & f \\ g & h & i - \lambda \end{pmatrix}
-
 $$
 
 $$
  \text{det}(A) = a_{11}a_{22}a_{33} - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31}
-
 $$
 
 So
@@ -335,13 +328,10 @@ $$
 $$
 
 $$
-
 \text{det}(A - \lambda I) = \text{= }-c e g+b f g+c d h-a f h-b d i+a e i+b d \lambda -a e \lambda +c g \lambda +f h \lambda -a i \lambda -e i \lambda +a \lambda ^2+e \lambda ^2+i \lambda ^2-\lambda ^3
 $$
 $$
-
 \text{det}(A - \lambda I) = -c e g + b f g + c d h - a f h - b d i + a e i + (b d + c g + f h - e i - a (e + i)) \lambda + (a + e + i) \lambda^2 - \lambda^3
-
 $$
 
 Lets do this again with 4x4 Matrix
@@ -356,18 +346,17 @@ m & n & o & p
 $\text{det}(A) =  a\,f\,k\,p-a\,f\,l\,o-a\,g\,j\,p+a\,g\,l\,n+a\,h\,j\,o-a\,h\,k\,n-b\,e\,k\,p+b\,e\,l\,o+b\,g\,i\,p-b\,g\,l\,m-b\,h\,i\,o+b\,h\,k\,m+c\,e\,j\,p-c\,e\,l\,n-c\,f\,i\,p+c\,f\,l\,m+c\,h\,i\,n-c\,h\,j\,m-d\,e\,j\,o+d\,e\,k\,n+d\,f\,i\,o-d\,f\,k\,m-d\,g\,i\,n+d\,g\,j\,m$
 
 $$
-  A - \lambda I  = \left( \begin{array}{cccc}
+A - \lambda I  = \left( \begin{array}{cccc}
 a-\lambda  & b & c & d\\
 e & f-\lambda  & g & h\\
 i & j & k-\lambda  & l\\
 m & n & o & p-\lambda
 \end{array}\right)
-
 $$
 
-
-
-$b\,e\,l\,o-b\,g\,l\,m-b\,h\,i\,o-c\,e\,l\,n+c\,h\,i\,n-c\,h\,j\,m-d\,e\,j\,o-d\,g\,i\,n+d\,g\,j\,m-b\,g\,i\,{(\lambda -p)}+b\,h\,m\,{(k-\lambda )}-c\,e\,j\,{(\lambda -p)}+c\,l\,m\,{(f-\lambda )}+d\,e\,n\,{(k-\lambda )}+d\,i\,o\,{(f-\lambda )}+g\,l\,n\,{(a-\lambda )}+h\,j\,o\,{(a-\lambda )}+b\,e\,{(k-\lambda )}\,{(\lambda -p)}+c\,i\,{(f-\lambda )}\,{(\lambda -p)}-d\,m\,{(f-\lambda )}\,{(k-\lambda )}+g\,j\,{(a-\lambda )}\,{(\lambda -p)}-h\,n\,{(a-\lambda )}\,{(k-\lambda )}-l\,o\,{(a-\lambda )}\,{(f-\lambda )}-{(a-\lambda )}\,{(f-\lambda )}\,{(k-\lambda )}\,{(\lambda -p)}$
+$$
+b\,e\,l\,o-b\,g\,l\,m-b\,h\,i\,o-c\,e\,l\,n+c\,h\,i\,n-c\,h\,j\,m-d\,e\,j\,o-d\,g\,i\,n+d\,g\,j\,m-b\,g\,i\,{(\lambda -p)}+b\,h\,m\,{(k-\lambda )}-c\,e\,j\,{(\lambda -p)}+c\,l\,m\,{(f-\lambda )}+d\,e\,n\,{(k-\lambda )}+d\,i\,o\,{(f-\lambda )}+g\,l\,n\,{(a-\lambda )}+h\,j\,o\,{(a-\lambda )}+b\,e\,{(k-\lambda )}\,{(\lambda -p)}+c\,i\,{(f-\lambda )}\,{(\lambda -p)}-d\,m\,{(f-\lambda )}\,{(k-\lambda )}+g\,j\,{(a-\lambda )}\,{(\lambda -p)}-h\,n\,{(a-\lambda )}\,{(k-\lambda )}-l\,o\,{(a-\lambda )}\,{(f-\lambda )}-{(a-\lambda )}\,{(f-\lambda )}\,{(k-\lambda )}\,{(\lambda -p)}
+$$
 
 Let, $P_n$ denotes the number of terms with $-\lambda$ in our row permutation terms from leibniz formula for determinants
 
@@ -403,11 +392,10 @@ $P_1 = clm f + dio f + a gln + a hjo + bhm k + den k + bgi p +
 
 
 So the final answer is 
-$$
 
+$$
 \text{det} (A - \lambda I ) =  
 \lambda^4 +{\left(-a-f-k-p\right)}\,\lambda^3 +{\left(a\,f-b\,e+a\,k-c\,i+a\,p-d\,m+f\,k-g\,j+f\,p-h\,n+k\,p-l\,o\right)}\,\lambda^2 +{\left(a\,g\,j-a\,f\,k+b\,e\,k-b\,g\,i-c\,e\,j+c\,f\,i-a\,f\,p+a\,h\,n+b\,e\,p-b\,h\,m-d\,e\,n+d\,f\,m-a\,k\,p+a\,l\,o+c\,i\,p-c\,l\,m-d\,i\,o+d\,k\,m-f\,k\,p+f\,l\,o+g\,j\,p-g\,l\,n-h\,j\,o+h\,k\,n\right)}\,\lambda +a\,f\,k\,p-a\,f\,l\,o-a\,g\,j\,p+a\,g\,l\,n+a\,h\,j\,o-a\,h\,k\,n-b\,e\,k\,p+b\,e\,l\,o+b\,g\,i\,p-b\,g\,l\,m-b\,h\,i\,o+b\,h\,k\,m+c\,e\,j\,p-c\,e\,l\,n-c\,f\,i\,p+c\,f\,l\,m+c\,h\,i\,n-c\,h\,j\,m-d\,e\,j\,o+d\,e\,k\,n+d\,f\,i\,o-d\,f\,k\,m-d\,g\,i\,n+d\,g\,j\,m
-
 $$
 
 
@@ -466,9 +454,14 @@ $\text{det}(A\,B) = \\a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,1} \,b_{2,2} \,b_{3,3} 
 
 $det(AB)=$
 
-$+a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,1} \,b_{2,3} \,b_{3,2} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\-  a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,1} \,b_{2,3} \,b_{3,2} +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,2} \,b_{2,3} \,b_{3,1} -a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,3} \,b_{2,1} \,b_{3,2}  +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\-a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,1} \,b_{2,3} \,b_{3,2} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,2} \,b_{2,3} \,b_{3,1}  -a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,3} \,b_{2,1} \,b_{3,2} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\ +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,1} \,b_{2,3} \,b_{3,2}  -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\+a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,1} \,b_{2,3} \,b_{3,2}  -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\-a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,1} \,b_{2,3} \,b_{3,2}  +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,2} \,b_{2,3} \,b_{3,1} -a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,3} \,b_{2,1} \,b_{3,2} +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,3} \,b_{2,2} \,b_{3,1}$
+$$
+\begin{align}
++a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,1} \,b_{2,3} \,b_{3,2} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\ -  a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,1} \,b_{2,3} \,b_{3,2} +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,2} \,b_{2,3} \,b_{3,1} -a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,3} \,b_{2,1} \,b_{3,2}  +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\-a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,1} \,b_{2,3} \,b_{3,2} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,2} \,b_{2,3} \,b_{3,1}  -a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,3} \,b_{2,1} \,b_{3,2} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\ +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,1} \,b_{2,3} \,b_{3,2}  -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\+a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,1} \,b_{2,3} \,b_{3,2}  -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\-a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,1} \,b_{2,3} \,b_{3,2}  +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,2} \,b_{2,3} \,b_{3,1} -a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,3} \,b_{2,1} \,b_{3,2} +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,3} \,b_{2,2} \,b_{3,1}
+\end{align}
+$$
 
 
+The multiplication is a sign symmertic operation for determinant permuation, So indiviual signs for permutation terms are preserved by multiplcation. 
 
 
 ## Conclusion

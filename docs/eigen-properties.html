@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>eigen-properties</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h1 id="eigenvalues-and-properties">Eigenvalues and Properties</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Eigenvalues and eigenvectors are fundamental concepts in linear
+algebra. They play a crucial role in various mathematical and
+engineering applications. In this document, we will explore the concept
+of eigenvalues, their properties, and provide a proof for one of these
+properties.</p>
+<h2 id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</h2>
+<p>Eigenvalues (λ) and eigenvectors (v) are related to square matrices
+(A) by the equation:</p>
+<p>A <em>v = λ</em> v</p>
+<p>Where:</p>
+<ul>
+<li>A is a square matrix</li>
+<li>v is a nonzero vector</li>
+<li>λ is a scalar (the eigenvalue)</li>
+</ul>
+<p>Eigenvalues represent the scaling factors by which the eigenvectors
+are stretched or compressed when multiplied by the matrix A.</p>
+<h2 id="properties-of-eigenvalues">Properties of Eigenvalues</h2>
+<ol type="1">
+<li><p>Sum of eigenvalues equals the trace: If A is a square matrix with
+eigenvalues λ₁, λ₂, …, λₙ, then: Trace(A) = λ₁ + λ₂ + … + λₙ</p></li>
+<li><p>Product of eigenvalues equals the determinant: If A is a square
+matrix with eigenvalues λ₁, λ₂, …, λₙ, then: det(A) = λ₁ <em>λ₂</em> … *
+λₙ</p></li>
+<li><p>Eigenvalues of a triangular matrix: For an upper triangular or
+lower triangular matrix, the eigenvalues are the diagonal
+elements.</p></li>
+<li><p>Eigenvalues of a scalar multiple of a matrix: If A is a matrix
+with eigenvalues λ₁, λ₂, …, λₙ, and k is a scalar, then the eigenvalues
+of kA are kλ₁, kλ₂, …, kλₙ.</p></li>
+<li><p>Eigenvalues of the inverse of a matrix: If A is a square matrix
+with eigenvalues λ₁, λ₂, …, λₙ, and A⁻¹ exists, then the eigenvalues of
+A⁻¹ are 1/λ₁, 1/λ₂, …, 1/λₙ.</p></li>
+<li><p>Eigenvalues of matrix powers: If A is a square matrix with
+eigenvalues λ₁, λ₂, …, λₙ, then the eigenvalues of A raised to a
+positive integer power k (A^k) are λ₁^k, λ₂^k, …, λₙ^k.</p></li>
+</ol>
+<h2 id="proof-of-property-1-2-3">Proof of Property 1 2 3</h2>
+<p>To work on our proof lets do our analysis around characterstic
+equation.</p>
+<p>To find the characteristic equation of a matrix, we use the formula
+<span class="math inline">\(\text{det}(A - \lambda I) = 0\)</span>,
+where <span class="math inline">\(A\)</span> is the matrix, <span
+class="math inline">\(\lambda\)</span> is an eigenvalue, and <span
+class="math inline">\(I\)</span> is the identity matrix. For the matrix
+<span class="math inline">\(A = \begin{pmatrix} a &amp; b \\ c &amp; d
+\end{pmatrix}\)</span>, the characteristic equation is found by
+calculating the determinant of <span class="math inline">\(A - \lambda
+I\)</span>, which is:</p>
+<p><span class="math display">\[
+\text{det}\left( \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} -
+\begin{pmatrix} \lambda &amp; 0 \\ 0 &amp; \lambda \end{pmatrix} \right)
+= 0
+\]</span></p>
+<p>This simplifies to:</p>
+<p><span class="math display">\[
+\text{det}\left( \begin{pmatrix} a - \lambda &amp; b \\ c &amp; d -
+\lambda \end{pmatrix} \right) = 0
+\]</span></p>
+<p>The determinant of this 2x2 matrix is:</p>
+<p><span class="math display">\[
+(a - \lambda)(d - \lambda) - bc = 0
+\]</span></p>
+<p>Expanding this, we get the characteristic equation:</p>
+<p><span class="math display">\[
+\lambda^2 - (a + d)\lambda + (ad - bc) = 0
+\]</span></p>
+<p>This is the characteristic equation for the given matrix.</p>
+<p>Lets there be general euqation of <span class="math inline">\(Ax^2 +
+Bx + C\)</span></p>
+<p>and suppose <span class="math inline">\(\lambda_1\)</span> and <span
+class="math inline">\(\lambda_2\)</span> are roots of a equation</p>
+<p><span class="math display">\[
+\begin{align*}
+(x - \lambda_1)(x - \lambda_2) &amp;= x^2 - (\lambda_2 + \lambda_1)x +
+\lambda_1\lambda_2 \\
+Ax^2 + Bx + C &amp;= x^2 - (\lambda_2 + \lambda_1)x + \lambda_1\lambda_2
+\end{align*}
+\]</span></p>
+<p>so now we can clearly say that <span
+class="math inline">\(\lambda_1\)</span> and <span
+class="math inline">\(\lambda_2\)</span> are sum of dialognal
+elements</p>
+<p>if you got the hint what we are trying to analyse with this pattern
+lets go deeper</p>
+<h2 id="generalized-characteristic-equation">generalized characteristic
+equation</h2>
+<p>The generalized characteristic equation for an <span
+class="math inline">\(n \times n\)</span> matrix <span
+class="math inline">\(A\)</span> can be derived from the determinant of
+the matrix <span class="math inline">\(A - \lambda I\)</span>, where
+<span class="math inline">\(\lambda\)</span> is a scalar and <span
+class="math inline">\(I\)</span> is the <span class="math inline">\(n
+\times n\)</span> identity matrix. The characteristic polynomial <span
+class="math inline">\(P(\lambda)\)</span> is obtained by computing the
+determinant of <span class="math inline">\(A - \lambda I\)</span>, and
+the characteristic equation is set by equating this polynomial to
+zero:</p>
+<p><span class="math inline">\(P(\lambda) = \det(A - \lambda I) =
+0\)</span></p>
+<p>For an <span class="math inline">\(n \times n\)</span> matrix, the
+characteristic polynomial will be a polynomial of degree <span
+class="math inline">\(n\)</span> in <span
+class="math inline">\(\lambda\)</span>. The general form of the
+characteristic polynomial for a 2x2, 3x3, … nxn matrix can be expressed
+as follows:</p>
+<h3>
+For a 2x2 matrix:
+</h3>
+Let $ A =
+<span class="math display">\[\begin{bmatrix} a &amp; b \\ c &amp; d
+\end{bmatrix}\]</span>
+<p>$ , then <span class="math inline">\(P(\lambda) = \det(A - \lambda I)
+= \det \begin{bmatrix} a-\lambda &amp; b \\ c &amp; d-\lambda
+\end{bmatrix} = (a-\lambda)(d-\lambda) - bc = \lambda^2 - (a + d)\lambda
++ (ad - bc)\)</span></p>
+<h3>
+For a 3x3 matrix:
+</h3>
+<p>Let <span class="math inline">\(A = \begin{bmatrix} a &amp; b &amp; c
+\\ d &amp; e &amp; f \\ g &amp; h &amp; i \end{bmatrix}\)</span>, then
+<span class="math inline">\(P(\lambda) = \det(A - \lambda I) = \lambda^3
+- (a + e + i)\lambda^2 + (ae + ei + ai - bf - cg - dh)\lambda - (aei +
+bfg + cdh - afh - bdi - ceg)\)</span></p>
+<h3>
+For an nxn matrix:
+</h3>
+$$ p() = (A - I) =
+<span class="math display">\[\begin{vmatrix}
+a_{11} - \lambda &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} - \lambda &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} - \lambda
+\end{vmatrix}\]</span>
+<p>= (-1)^n ^n + c_{1}^{n-1} + c_{2}^{n-2} + + c_{n-1}+ c_n,</p>
+<p>$$</p>
+<p><br></p>
+<p>The characteristic polynomial will be of the form: <span
+class="math inline">\(P(\lambda) = (-1)^n \lambda^n +
+c_{n-1}\lambda^{n-1} + c_{n-2}\lambda^{n-2} + ... + c_2\lambda^2 +
+c_1\lambda + c_0\)</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(c_{n-1}\)</span>, <span
+class="math inline">\(c_{n-2}\)</span>, …, <span
+class="math inline">\(c_1\)</span>, <span
+class="math inline">\(c_0\)</span> are coefficients that are functions
+of the entries of the matrix <span class="math inline">\(A\)</span>.
+These coefficients are determined by the sums of products of the entries
+of <span class="math inline">\(A\)</span>, following specific patterns
+related to permutations of matrix entries and their sign, according to
+the Leibniz formula for determinants.</li>
+</ul>
+<p>The roots of the characteristic polynomial <span
+class="math inline">\(P(\lambda)\)</span> are the eigenvalues of the
+matrix <span class="math inline">\(A\)</span>. Each eigenvalue may
+correspond to one or more eigenvectors, and the set of all eigenvectors
+associated with an eigenvalue, along with the zero vector, forms the
+eigenspace for that eigenvalue.</p>
+<h3 id="determinant">Determinant</h3>
+<p>Lets recall our work with determinant formula <span
+class="math display">\[
+\begin{equation}
+\det(A) = \sum_{i=1}^{n} (-1)^{i+j} \cdot a_{ij} \cdot M_{ij}
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{vmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}
+\end{vmatrix} =
+\sum_{i=1}^{n} (-1)^{i+j} \cdot a_{ij} \cdot
+\begin{vmatrix}
+a_{11} &amp; \cdots &amp; a_{1(j-1)} &amp; a_{1(j+1)} &amp; \cdots &amp;
+a_{1n} \\
+a_{21} &amp; \cdots &amp; a_{2(j-1)} &amp; a_{2(j+1)} &amp; \cdots &amp;
+a_{2n} \\
+\vdots &amp; \ddots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots
+\\
+a_{(i-1)1} &amp; \cdots &amp; a_{(i-1)(j-1)} &amp; a_{(i-1)(j+1)} &amp;
+\cdots &amp; a_{(i-1)n} \\
+a_{(i+1)1} &amp; \cdots &amp; a_{(i+1)(j-1)} &amp; a_{(i+1)(j+1)} &amp;
+\cdots &amp; a_{(i+1)n} \\
+\vdots &amp; \ddots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots
+\\
+a_{n1} &amp; \cdots &amp; a_{n(j-1)} &amp; a_{n(j+1)} &amp; \cdots &amp;
+a_{nn}
+\end{vmatrix}
+\]</span></p>
+<p>$$</p>
+<p>(A) = <em>{S</em>{n}} () <em>{i=1}^{n} a</em>{i,(i)} =
+<em>{S</em>{n}} () <em>{i=1}^{n} a</em>{(i),i}</p>
+<p>$$</p>
+<p>The Leibniz formula for the determinant of an <span
+class="math inline">\(n \times n\)</span> matrix <span
+class="math inline">\(A\)</span> can be represented using LaTeX as
+follows:</p>
+<p><span class="math inline">\(\det(A) = \sum_{\tau \in S_{n}}
+\operatorname{sgn}(\tau) \prod_{i=1}^{n} a_{i,\tau(i)} = \sum_{\sigma
+\in S_{n}} \operatorname{sgn}(\sigma) \prod_{i=1}^{n}
+a_{\sigma(i),i}\)</span></p>
+<p>Here’s a breakdown of this formula:</p>
+<ul>
+<li><span class="math inline">\(\det(A)\)</span> represents the
+determinant of the matrix <span class="math inline">\(A\)</span>.</li>
+<li>The sums run over all permutations <span
+class="math inline">\(\tau\)</span> and <span
+class="math inline">\(\sigma\)</span> in the symmetric group <span
+class="math inline">\(S_n\)</span>, which consists of all possible
+permutations of the set <span class="math inline">\(\{1, 2, \ldots,
+n\}\)</span>.</li>
+<li><span class="math inline">\(\operatorname{sgn}(\tau)\)</span> and
+<span class="math inline">\(\operatorname{sgn}(\sigma)\)</span> denote
+the sign of the permutations <span class="math inline">\(\tau\)</span>
+and <span class="math inline">\(\sigma\)</span>, respectively. This sign
+is <span class="math inline">\(+1\)</span> for an even permutation and
+<span class="math inline">\(-1\)</span> for an odd permutation.</li>
+<li><span class="math inline">\(\prod_{i=1}^{n} a_{i,\tau(i)}\)</span>
+and <span class="math inline">\(\prod_{i=1}^{n} a_{\sigma(i),i}\)</span>
+represent the product of matrix elements for each permutation. In each
+product, <span class="math inline">\(a_{ij}\)</span> is the element of
+<span class="math inline">\(A\)</span> in the <span
+class="math inline">\(i\)</span>-th row and <span
+class="math inline">\(j\)</span>-th column.</li>
+</ul>
+<p>This formula elegantly captures the determinant of a matrix as a sum
+over all permutations of the product of elements chosen according to the
+permutation, each weighted by the sign of the permutation. <br> <br></p>
+<p><span class="math display">\[
+\begin{array}{c} A = \begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33} \\
+\end{bmatrix} \end{array}
+\]</span> <span class="math inline">\(\text{det}(A) = a_{11}a_{22}a_{33}
+- a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33} + a_{12}a_{23}a_{31} +
+a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31}\)</span> <br> <br> <br></p>
+<span class="math display">\[
+A = \begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} &amp; a_{14} \\
+a_{21} &amp; a_{22} &amp; a_{23} &amp; a_{24} \\
+a_{31} &amp; a_{32} &amp; a_{33} &amp; a_{34} \\
+a_{41} &amp; a_{42} &amp; a_{43} &amp; a_{44} \\
+\end{bmatrix}
+\]</span> $$
+<span class="math display">\[\begin{array}{c} \text{det}(A) =
+a_{11}a_{22}a_{33}a_{44} - a_{11}a_{22}a_{34}a_{43} -
+a_{11}a_{23}a_{32}a_{44} + a_{11}a_{23}a_{34}a_{42} +
+a_{11}a_{24}a_{32}a_{43} - a_{11}a_{24}a_{33}a_{42} \\
+- a_{12}a_{21}a_{33}a_{44} + a_{12}a_{21}a_{34}a_{43} +
+a_{12}a_{23}a_{31}a_{44} - a_{12}a_{23}a_{34}a_{41} -
+a_{12}a_{24}a_{31}a_{43} + a_{12}a_{24}a_{33}a_{41} \\
+- a_{13}a_{21}a_{32}a_{44} - a_{13}a_{21}a_{34}a_{42} -
+a_{13}a_{22}a_{31}a_{44} + a_{13}a_{22}a_{34}a_{41} +
+a_{13}a_{24}a_{31}a_{42} - a_{13}a_{24}a_{32}a_{41} \\
+- a_{14}a_{21}a_{32}a_{43} + a_{14}a_{21}a_{33}a_{42} +
+a_{14}a_{22}a_{31}a_{43} - a_{14}a_{22}a_{33}a_{41} -
+a_{14}a_{23}a_{31}a_{42} + a_{14}a_{23}a_{32}a_{41} \end{array}\]</span>
+<p>$$</p>
+<p>Substituting the values for each permutation, you can calculate the
+determinant of the 3x3 matrix (A) using Leibniz’s formula.</p>
+<p>back to pattern analysis</p>
+<p><span class="math display">\[ \begin{align*}
+(x - \lambda_1)(x - \lambda_2) &amp;= x^2 - (\lambda_2 + \lambda_1)x +
+\lambda_1\lambda_2 \\
+\end{align*} \]</span></p>
+<p><br></p>
+<p><span class="math display">\[
+(x - \lambda_1)(x - \lambda_2)(x - \lambda_3) = x^3 - (\lambda_1 +
+\lambda_2 + \lambda_3)x^2 + (\lambda_1\lambda_2 + \lambda_2\lambda_3 +
+\lambda_1\lambda_3)x - \lambda_1\lambda_2\lambda_3
+\]</span></p>
+<p><br></p>
+<p><span class="math display">\[
+\begin{align*}
+&amp;(x - \lambda_1)(x - \lambda_2)(x - \lambda_3)(x - \lambda_4) \\
+&amp;= x^4 - (\lambda_1 + \lambda_2 + \lambda_3 + \lambda_4)x^3 +
+(\lambda_1\lambda_2 + \lambda_1\lambda_3 + \lambda_1\lambda_4 +
+\lambda_2\lambda_3 + \lambda_2\lambda_4 + \lambda_3\lambda_4)x^2 \\
+&amp;\quad - (\lambda_1\lambda_2\lambda_3 + \lambda_1\lambda_2\lambda_4
++ \lambda_1\lambda_3\lambda_4 + \lambda_2\lambda_3\lambda_4)x +
+\lambda_1\lambda_2\lambda_3\lambda_4
+\end{align*}
+\]</span></p>
+<p>the characteristic equations for 2x2, 3x3, 4x4, and 5x5 matrices in
+the form you provided:</p>
+<ol type="1">
+<li>For a 2x2 matrix:</li>
+</ol>
+<p><span class="math display">\[
+\begin{array}{c} \text{det}\left( \begin{pmatrix} a &amp; b \\ c &amp; d
+\end{pmatrix} - \begin{pmatrix} \lambda &amp; 0 \\ 0 &amp; \lambda
+\end{pmatrix} \right) = 0 \end{array}
+\]</span> <span class="math display">\[
+\lambda^2 - (a + d)\lambda + (ad - bc) = 0
+\]</span></p>
+<ol start="2" type="1">
+<li><p>For a 3x3 matrix:</p>
+<p><span class="math display">\[
+\begin{array}{c} \text{det}\left( \begin{pmatrix} a &amp; b &amp; c
+&amp; d \\ e &amp; f &amp; g &amp; h \\ i &amp; j &amp; k &amp; l \\ m
+&amp; n &amp; o &amp; p \end{pmatrix} - \begin{pmatrix} \lambda &amp; 0
+&amp; 0 &amp; 0 \\ 0 &amp; \lambda &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp;
+\lambda &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; \lambda \end{pmatrix} \right)
+= 0 \end{array}
+\]</span></p>
+<p><span class="math inline">\(\lambda^3 - (a + e + i)\lambda^2 + (ae +
+ai + ei - fh - fi - gh)\lambda - (aei + bfg + cdh - ceg - bdi - afh) =
+0\)</span></p></li>
+<li><p>For a 4x4 matrix:</p>
+<p><span class="math display">\[
+\begin{array}{c} \text{det}\left( \begin{pmatrix} a &amp; b &amp; c
+&amp; d \\ e &amp; f &amp; g &amp; h \\ i &amp; j &amp; k &amp; l \\ m
+&amp; n &amp; o &amp; p \end{pmatrix} - \begin{pmatrix} \lambda &amp; 0
+&amp; 0 &amp; 0 \\ 0 &amp; \lambda &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp;
+\lambda &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; \lambda \end{pmatrix} \right)
+= 0 \end{array}
+\]</span></p>
+<p><span class="math display">\[
+\lambda^4 - (a + f + k + p)\lambda^3 \\+ (af + ak + ap + fk + fp + kp -
+bce - bcf - bck - bde - bdf - bdp - ceh - cek - cep - dfh - dfk - dfp -
+ghi - ghk - ghp - jli - jlk - jlp - moi - mok - mop)\lambda^2 \\- (afk +
+afp + akp + fkp + bcef + bcek + bcep + bdef + bdek + bdep + cefk + cefp
++ cekp + defk + defp + dekp + efgh + efij + efik + efkl + efkp + fgij +
+fgik + fgil + fgkl + fgkp + ghij + ghik + ghil + ghkl + jlik + jlip +
+jlkp + jlmp + mokp)\lambda + \\ \\ (afkp + bcefk + bcefp + bcekp + bdefk
++ bdefp + bdekp + cefkp + defkp + efghk + efghp + efijp + efikp + efklp
++ fgijp + fgikp + fgklp + ghijp + ghikp + ghklp + jlikp + mokp) = 0
+\]</span></p></li>
+</ol>
+<p>There are some results we want to reach are the characteristic
+equations for 2x2, 3x3, 4x4, and 5x5 matrices in the form you
+mentioned:</p>
+<ul>
+<li><p>For a 2x2 matrix A, the characteristic equation is:</p>
+<p><span class="math inline">\(\lambda^2 - \text{Tr}(A) \lambda +
+\text{det}(A) = 0\)</span></p></li>
+<li><p>For a 3x3 matrix A, the characteristic equation is:</p>
+<p><span class="math inline">\(\lambda^3 - \text{Tr}(A) \lambda^2 +
+\left(\frac{1}{2}[\text{Tr}(A)^2 - \text{Tr}(A^2)]\right) \lambda -
+\text{det}(A) = 0\)</span></p></li>
+<li><p>For a 4x4 matrix A, the characteristic equation is more complex,
+but it follows the same pattern:</p>
+<p><span class="math inline">\(\lambda^4 - \text{Tr}(A) \lambda^3 +
+\left(\frac{1}{2}[\text{Tr}(A)^2 - \text{Tr}(A^2)]\right) \lambda^2 -
+\left(\frac{1}{6}[\text{Tr}(A)^3 - 3\text{Tr}(A)\text{Tr}(A^2) +
+2\text{Tr}(A^3)]\right) \lambda + \text{det}(A) = 0\)</span></p></li>
+<li><p>For a 5x5 matrix A, the characteristic equation is also more
+complex:</p>
+<p><span class="math inline">\(\lambda^5 - \text{Tr}(A) \lambda^4 +
+\left(\frac{1}{2}[\text{Tr}(A)^2 - \text{Tr}(A^2)]\right) \lambda^3 -
+\left(\frac{1}{6}[\text{Tr}(A)^3 - 3\text{Tr}(A)\text{Tr}(A^2) +
+2\text{Tr}(A^3)]\right) \lambda^2 + \left(\frac{1}{24}[\text{Tr}(A)^4 -
+6\text{Tr}(A)^2\text{Tr}(A^2) + 8\text{Tr}(A)\text{Tr}(A^3) +
+3\text{Tr}(A^2)^2 - 6\text{Tr}(A^4)]\right) \lambda - \text{det}(A) =
+0\)</span></p></li>
+<li><p>The characteristic equation for a 6x6 matrix A can be expressed
+as follows: <span class="math display">\[
+  \lambda^6 - \text{Tr}(A) \lambda^5 + \left(\frac{1}{2}[\text{Tr}(A)^2
+- \text{Tr}(A^2)]\right) \lambda^4 - \left(\frac{1}{6}[\text{Tr}(A)^3 -
+3\text{Tr}(A)\text{Tr}(A^2) + 2\text{Tr}(A^3)]\right) \lambda^3 +
+\left(\frac{1}{24}[\text{Tr}(A)^4 - 6\text{Tr}(A)^2\text{Tr}(A^2) +
+8\text{Tr}(A)\text{Tr}(A^3) + 3\text{Tr}(A^2)^2 -
+6\text{Tr}(A^4)]\right) \lambda^2 - \left(\frac{1}{120}[\text{Tr}(A)^5 -
+10\text{Tr}(A)^3\text{Tr}(A^2) + 20\text{Tr}(A)^2\text{Tr}(A^3) +
+30\text{Tr}(A)\text{Tr}(A^2)^2 - 60\text{Tr}(A^3)^2 +
+120\text{Tr}(A^5)]\right) \lambda + \text{det}(A) = 0
+  \]</span></p></li>
+</ul>
+<p>These equations can be used to find the eigenvalues of matrices of
+the respective sizes.</p>
+<p>Let</p>
+<p><span class="math display">\[
+A - \lambda I = \begin{pmatrix} a - \lambda &amp; b &amp; c \\ d &amp; e
+- \lambda &amp; f \\ g &amp; h &amp; i - \lambda \end{pmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\text{det}(A) = a_{11}a_{22}a_{33} - a_{11}a_{23}a_{32} -
+a_{12}a_{21}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} -
+a_{13}a_{22}a_{31}
+\]</span></p>
+<p>So <span class="math display">\[
+\begin{align*}
+\text{det}(A - \lambda I) &amp;= (a-\lambda)(e-\lambda)(i-\lambda) + bdf
++ cgh - c(e-\lambda)d - b(g)(i-\lambda) - (a-\lambda)hf \\
+&amp;= (a-\lambda)(e-\lambda)(i-\lambda) + bdf + cgh - ced + \lambda cd
+- big + \lambda bg - ahi + \lambda hf
+\end{align*}
+\]</span></p>
+<p>Let, <span class="math inline">\(P_n\)</span> denotes the number of
+terms with <span class="math inline">\(-\lambda\)</span> in our row
+permutation terms from leibniz formula for determinants</p>
+<p><span class="math inline">\(P_3 =
+(a-\lambda)(e-\lambda)(i-\lambda)  \\\)</span></p>
+<p><span class="math inline">\(P_2 = NIL \\\)</span></p>
+<p><span class="math inline">\(P_1 = - c(e-\lambda)d - b(g)(i-\lambda) -
+(a-\lambda)hf  \\\)</span></p>
+<p><span class="math inline">\(P_0 =   bdf + cgh\\\)</span></p>
+<p>Here <span class="math display">\[
+P_3 = (a - λ)(e - λ)(i - λ) = -\lambda^3 + (a + e + i)\lambda^2 - (ae +
+ai + ei)\lambda + aei
+\]</span></p>
+<p><span class="math display">\[
+P_1 = (a - \lambda)cf + bd(i - \lambda) + (e - \lambda)cg + bh(a -
+\lambda)  =  \lambda(-cf - bd - cg - bh) + acf + bdi + ecg + bha
+\]</span></p>
+<p>So,</p>
+<p><span class="math display">\[
+\text{det}(A - \lambda I) =  -a b h - a c f + a e i - a e \lambda - a i
+\lambda + a \lambda^2 - b d i + b d \lambda + b f g + b h \lambda + c d
+h - c e g + c f \lambda + c g \lambda - e i \lambda + e \lambda^2 + i
+\lambda^2 - \lambda^3
+\]</span></p>
+<p><span class="math display">\[
+\text{det}(A - \lambda I) = \text{= }-c e g+b f g+c d h-a f h-b d i+a e
+i+b d \lambda -a e \lambda +c g \lambda +f h \lambda -a i \lambda -e i
+\lambda +a \lambda ^2+e \lambda ^2+i \lambda ^2-\lambda ^3
+\]</span> <span class="math display">\[
+\text{det}(A - \lambda I) = -c e g + b f g + c d h - a f h - b d i + a e
+i + (b d + c g + f h - e i - a (e + i)) \lambda + (a + e + i) \lambda^2
+- \lambda^3
+\]</span></p>
+<p>Lets do this again with 4x4 Matrix</p>
+<p><span class="math display">\[A  = \left(\begin{array}{cccc}
+a &amp; b &amp; c &amp; d\\
+e &amp; f &amp; g &amp; h\\
+i &amp; j &amp; k &amp; l\\
+m &amp; n &amp; o &amp; p
+\end{array}\right)\]</span></p>
+<p><span class="math inline">\(\text{det}(A)
+=  a\,f\,k\,p-a\,f\,l\,o-a\,g\,j\,p+a\,g\,l\,n+a\,h\,j\,o-a\,h\,k\,n-b\,e\,k\,p+b\,e\,l\,o+b\,g\,i\,p-b\,g\,l\,m-b\,h\,i\,o+b\,h\,k\,m+c\,e\,j\,p-c\,e\,l\,n-c\,f\,i\,p+c\,f\,l\,m+c\,h\,i\,n-c\,h\,j\,m-d\,e\,j\,o+d\,e\,k\,n+d\,f\,i\,o-d\,f\,k\,m-d\,g\,i\,n+d\,g\,j\,m\)</span></p>
+<p><span class="math display">\[
+A - \lambda I  = \left( \begin{array}{cccc}
+a-\lambda  &amp; b &amp; c &amp; d\\
+e &amp; f-\lambda  &amp; g &amp; h\\
+i &amp; j &amp; k-\lambda  &amp; l\\
+m &amp; n &amp; o &amp; p-\lambda
+\end{array}\right)
+\]</span></p>
+<p><span class="math display">\[
+b\,e\,l\,o-b\,g\,l\,m-b\,h\,i\,o-c\,e\,l\,n+c\,h\,i\,n-c\,h\,j\,m-d\,e\,j\,o-d\,g\,i\,n+d\,g\,j\,m-b\,g\,i\,{(\lambda
+-p)}+b\,h\,m\,{(k-\lambda )}-c\,e\,j\,{(\lambda
+-p)}+c\,l\,m\,{(f-\lambda )}+d\,e\,n\,{(k-\lambda
+)}+d\,i\,o\,{(f-\lambda )}+g\,l\,n\,{(a-\lambda )}+h\,j\,o\,{(a-\lambda
+)}+b\,e\,{(k-\lambda )}\,{(\lambda -p)}+c\,i\,{(f-\lambda )}\,{(\lambda
+-p)}-d\,m\,{(f-\lambda )}\,{(k-\lambda )}+g\,j\,{(a-\lambda
+)}\,{(\lambda -p)}-h\,n\,{(a-\lambda )}\,{(k-\lambda
+)}-l\,o\,{(a-\lambda )}\,{(f-\lambda )}-{(a-\lambda )}\,{(f-\lambda
+)}\,{(k-\lambda )}\,{(\lambda -p)}
+\]</span></p>
+<p>Let, <span class="math inline">\(P_n\)</span> denotes the number of
+terms with <span class="math inline">\(-\lambda\)</span> in our row
+permutation terms from leibniz formula for determinants</p>
+<p><span class="math inline">\(P_4 =-{(a-\lambda )}\,{(f-\lambda
+)}\,{(k-\lambda )}\,{(\lambda -p)} \\\)</span></p>
+<p><span class="math inline">\(P_3 = NIL  \\\)</span></p>
+<p><span class="math inline">\(P_2 = b\,e\,{(k-\lambda )}\,{(\lambda
+-p)}+c\,i\,{(f-\lambda )}\,{(\lambda -p)}-d\,m\,{(f-\lambda
+)}\,{(k-\lambda )}+g\,j\,{(a-\lambda )}\,{(\lambda
+-p)}-h\,n\,{(a-\lambda )}\,{(k-\lambda )}-l\,o\,{(a-\lambda
+)}\,{(f-\lambda )} \\\)</span></p>
+<p>here, <span class="math inline">\(b e (k−λ)(λ−p) = -b e k p + (b e k
++ b e p) \lambda - b e \lambda^2\)</span></p>
+<p><span class="math inline">\(P_1 = -b\,g\,i\,{(\lambda
+-p)}+b\,h\,m\,{(k-\lambda )}-c\,e\,j\,{(\lambda
+-p)}+c\,l\,m\,{(f-\lambda )}+d\,e\,n\,{(k-\lambda
+)}+d\,i\,o\,{(f-\lambda )}+g\,l\,n\,{(a-\lambda )}+h\,j\,o\,{(a-\lambda
+)} \\\)</span></p>
+<p><span class="math inline">\(P_0 =
+b\,e\,l\,o-b\,g\,l\,m-b\,h\,i\,o-c\,e\,l\,n+c\,h\,i\,n-c\,h\,j\,m-d\,e\,j\,o-d\,g\,i\,n+d\,g\,j\,m-b\,g\,i\,\)</span></p>
+<p>Lets expand,</p>
+<p><span class="math inline">\(P_4 = \lambda ^3 (-a-f-k-p)+\lambda ^2 (a
+(f+k+p)+f (k+p)+k p)+\lambda  (-a (f (k+p)+k p)-f k p)+a f k p+\lambda
+^4
+\\\)</span></p>
+<p><span class="math display">\[
+    P_2 = -dm f k - (ci f + be k) p -
+a (hn k + f lo + gj p) + (a gj + a hn + be k + hn k + dm (f + k) +
+    a lo + f lo + be p + gj p + ci (f + p)) \lambda + (-be - ci -
+    dm - gj - hn - lo) \lambda]^2
+\]</span></p>
+<p><span class="math inline">\(P_1 = clm f + dio f + a gln + a hjo + bhm
+k + den k + bgi p +
+cej p + (-bgi - bhm - cej - clm - den - dio - gln - hjo)
+\lambda\)</span></p>
+<p>So the final answer is</p>
+<p><span class="math display">\[
+\text{det} (A - \lambda I ) =  
+\lambda^4 +{\left(-a-f-k-p\right)}\,\lambda^3
++{\left(a\,f-b\,e+a\,k-c\,i+a\,p-d\,m+f\,k-g\,j+f\,p-h\,n+k\,p-l\,o\right)}\,\lambda^2
++{\left(a\,g\,j-a\,f\,k+b\,e\,k-b\,g\,i-c\,e\,j+c\,f\,i-a\,f\,p+a\,h\,n+b\,e\,p-b\,h\,m-d\,e\,n+d\,f\,m-a\,k\,p+a\,l\,o+c\,i\,p-c\,l\,m-d\,i\,o+d\,k\,m-f\,k\,p+f\,l\,o+g\,j\,p-g\,l\,n-h\,j\,o+h\,k\,n\right)}\,\lambda
++a\,f\,k\,p-a\,f\,l\,o-a\,g\,j\,p+a\,g\,l\,n+a\,h\,j\,o-a\,h\,k\,n-b\,e\,k\,p+b\,e\,l\,o+b\,g\,i\,p-b\,g\,l\,m-b\,h\,i\,o+b\,h\,k\,m+c\,e\,j\,p-c\,e\,l\,n-c\,f\,i\,p+c\,f\,l\,m+c\,h\,i\,n-c\,h\,j\,m-d\,e\,j\,o+d\,e\,k\,n+d\,f\,i\,o-d\,f\,k\,m-d\,g\,i\,n+d\,g\,j\,m
+\]</span></p>
+<p>Lets do some pattern practice</p>
+<p><span class="math inline">\((x - a) (x - b) = x^2
++{(-a-b)}\,x+a\,b\\\)</span></p>
+<p><span class="math inline">\((x - a) (x - b) (x - c) = x^3
++{(-a-b-c)}\,x^2 +{(ab+ca+cb)}\,x-a\,b\,c\\\)</span></p>
+<p><span class="math inline">\((x - a) (x - b) (x - c) (x - d) = x^4
++{\left(-a-b-c-d\right)}\,x^3
++{\left(a\,b+d\,{\left(a+b+c\right)}+c\,{\left(a+b\right)}\right)}\,x^2
++{\left(-d\,{\left(a\,b+c\,{\left(a+b\right)}\right)}-a\,b\,c\right)}\,x+a\,b\,c\,d\)</span></p>
+<p>Looking at all the pattern I have seen its simple combinatrics and I
+have reached to the proof for Property 1 2 3 and 4,</p>
+<p>For 5 , the determinant of a product of two matrices holds the
+following property:</p>
+<p><span class="math inline">\(A = \left(\begin{array}{ccc}
+a_{1,1}  &amp; a_{2,1}  &amp; a_{3,1} \\
+a_{1,2}  &amp; a_{2,2}  &amp; a_{3,2} \\
+a_{1,3}  &amp; a_{2,3}  &amp; a_{3,3}
+\end{array}\right)\)</span> <span class="math inline">\(B =
+\left(\begin{array}{ccc}
+b_{1,1}  &amp; b_{2,1}  &amp; b_{3,1} \\
+b_{1,2}  &amp; b_{2,2}  &amp; b_{3,2} \\
+b_{1,3}  &amp; b_{2,3}  &amp; b_{3,3}
+\end{array}\right)\)</span></p>
+<p><span class="math inline">\(A\, B = \left(\begin{array}{ccc}
+a_{1,1}  &amp; a_{2,1}  &amp; a_{3,1} \\
+a_{1,2}  &amp; a_{2,2}  &amp; a_{3,2} \\
+a_{1,3}  &amp; a_{2,3}  &amp; a_{3,3}
+\end{array}\right)  \left(\begin{array}{ccc}
+b_{1,1}  &amp; b_{2,1}  &amp; b_{3,1} \\
+b_{1,2}  &amp; b_{2,2}  &amp; b_{3,2} \\
+b_{1,3}  &amp; b_{2,3}  &amp; b_{3,3}
+\end{array}\right)\)</span></p>
+<p><span class="math inline">\(A\, B =\left(\begin{array}{ccc}
+a_{1,1} \,b_{1,1} +a_{2,1} \,b_{1,2} +a_{3,1} \,b_{1,3}  &amp; a_{1,1}
+\,b_{2,1} +a_{2,1} \,b_{2,2} +a_{3,1} \,b_{2,3}  &amp; a_{1,1} \,b_{3,1}
++a_{2,1} \,b_{3,2} +a_{3,1} \,b_{3,3} \\
+a_{1,2} \,b_{1,1} +a_{2,2} \,b_{1,2} +a_{3,2} \,b_{1,3}  &amp; a_{1,2}
+\,b_{2,1} +a_{2,2} \,b_{2,2} +a_{3,2} \,b_{2,3}  &amp; a_{1,2} \,b_{3,1}
++a_{2,2} \,b_{3,2} +a_{3,2} \,b_{3,3} \\
+a_{1,3} \,b_{1,1} +a_{2,3} \,b_{1,2} +a_{3,3} \,b_{1,3}  &amp; a_{1,3}
+\,b_{2,1} +a_{2,3} \,b_{2,2} +a_{3,3} \,b_{2,3}  &amp; a_{1,3} \,b_{3,1}
++a_{2,3} \,b_{3,2} +a_{3,3} \,b_{3,3}
+\end{array}\right)\)</span></p>
+<p>It is evident using combinatorics that <span
+class="math inline">\(\text{det}(A)*\text{det}(B)\)</span> will have
+same terms as <span class="math inline">\(\text{det}(AB)\)</span>, but
+it is hard to visualize the sign of term.</p>
+<p><span class="math inline">\(\text{det}(A)  = a_{1,1} \,a_{2,2}
+\,a_{3,3} -a_{1,1} \,a_{2,3} \,a_{3,2} -a_{1,2} \,a_{2,1} \,a_{3,3}
++a_{1,2} \,a_{2,3} \,a_{3,1} +a_{1,3} \,a_{2,1} \,a_{3,2} -a_{1,3}
+\,a_{2,2} \,a_{3,1}\)</span></p>
+<p><span class="math inline">\(\text{det}(B)  =b_{1,1} \,b_{2,2}
+\,b_{3,3} -b_{1,1} \,b_{2,3} \,b_{3,2} -b_{1,2} \,b_{2,1} \,b_{3,3}
++b_{1,2} \,b_{2,3} \,b_{3,1} +b_{1,3} \,b_{2,1} \,b_{3,2} -b_{1,3}
+\,b_{2,2} \,b_{3,1}\)</span></p>
+<p><span class="math inline">\(\text{det}(A\,B) = \\a_{1,1} \,a_{2,2}
+\,a_{3,3} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,1} \,a_{2,2} \,a_{3,3}
+\,b_{1,1} \,b_{2,3} \,b_{3,2} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,2}
+\,b_{2,1} \,b_{3,3} +a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,2} \,b_{2,3}
+\,b_{3,1} +a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,3} \,b_{2,1} \,b_{3,2}
+-a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,3} \,b_{2,2} \,b_{3,1} -a_{1,1}
+\,a_{2,3} \,a_{3,2} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,1} \,a_{2,3}
+\,a_{3,2} \,b_{1,1} \,b_{2,3} \,b_{3,2} +a_{1,1} \,a_{2,3} \,a_{3,2}
+\,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,2}
+\,b_{2,3} \,b_{3,1} -a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,3} \,b_{2,1}
+\,b_{3,2} +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,3} \,b_{2,2} \,b_{3,1}
+-a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,2}
+\,a_{2,1} \,a_{3,3} \,b_{1,1} \,b_{2,3} \,b_{3,2} +a_{1,2} \,a_{2,1}
+\,a_{3,3} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,2} \,a_{2,1} \,a_{3,3}
+\,b_{1,2} \,b_{2,3} \,b_{3,1} -a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,3}
+\,b_{2,1} \,b_{3,2} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,3} \,b_{2,2}
+\,b_{3,1} +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,1} \,b_{2,2} \,b_{3,3}
+-a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,1} \,b_{2,3} \,b_{3,2} -a_{1,2}
+\,a_{2,3} \,a_{3,1} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,2} \,a_{2,3}
+\,a_{3,1} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,2} \,a_{2,3} \,a_{3,1}
+\,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,3}
+\,b_{2,2} \,b_{3,1} +a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,1} \,b_{2,2}
+\,b_{3,3} -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,1} \,b_{2,3} \,b_{3,2}
+-a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,3}
+\,a_{2,1} \,a_{3,2} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,3} \,a_{2,1}
+\,a_{3,2} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,3} \,a_{2,1} \,a_{3,2}
+\,b_{1,3} \,b_{2,2} \,b_{3,1} -a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,1}
+\,b_{2,2} \,b_{3,3} +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,1} \,b_{2,3}
+\,b_{3,2} +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,2} \,b_{2,1} \,b_{3,3}
+-a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,2} \,b_{2,3} \,b_{3,1} -a_{1,3}
+\,a_{2,2} \,a_{3,1} \,b_{1,3} \,b_{2,1} \,b_{3,2} +a_{1,3} \,a_{2,2}
+\,a_{3,1} \,b_{1,3} \,b_{2,2} \,b_{3,1}\)</span></p>
+<p><span class="math inline">\(det(AB)=\)</span></p>
+<p><span class="math display">\[
+\begin{align}
++a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,1}
+\,a_{2,2} \,a_{3,3} \,b_{1,1} \,b_{2,3} \,b_{3,2} -a_{1,1} \,a_{2,2}
+\,a_{3,3} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,1} \,a_{2,2} \,a_{3,3}
+\,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,3}
+\,b_{2,1} \,b_{3,2} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,3} \,b_{2,2}
+\,b_{3,1} \\ -  a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,1} \,b_{2,2}
+\,b_{3,3} +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,1} \,b_{2,3} \,b_{3,2}
++a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,1}
+\,a_{2,3} \,a_{3,2} \,b_{1,2} \,b_{2,3} \,b_{3,1} -a_{1,1} \,a_{2,3}
+\,a_{3,2} \,b_{1,3} \,b_{2,1} \,b_{3,2}  +a_{1,1} \,a_{2,3} \,a_{3,2}
+\,b_{1,3} \,b_{2,2} \,b_{3,1} \\-a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,1}
+\,b_{2,2} \,b_{3,3} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,1} \,b_{2,3}
+\,b_{3,2} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,2} \,b_{2,1} \,b_{3,3}
+-a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,2} \,b_{2,3} \,b_{3,1}  -a_{1,2}
+\,a_{2,1} \,a_{3,3} \,b_{1,3} \,b_{2,1} \,b_{3,2} +a_{1,2} \,a_{2,1}
+\,a_{3,3} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\ +a_{1,2} \,a_{2,3} \,a_{3,1}
+\,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,1}
+\,b_{2,3} \,b_{3,2}  -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,2} \,b_{2,1}
+\,b_{3,3} +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,2} \,b_{2,3} \,b_{3,1}
++a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,2}
+\,a_{2,3} \,a_{3,1} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\+a_{1,3} \,a_{2,1}
+\,a_{3,2} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,3} \,a_{2,1} \,a_{3,2}
+\,b_{1,1} \,b_{2,3} \,b_{3,2}  -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,2}
+\,b_{2,1} \,b_{3,3} +a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,2} \,b_{2,3}
+\,b_{3,1} +a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,3} \,b_{2,1} \,b_{3,2}
+-a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\-a_{1,3}
+\,a_{2,2} \,a_{3,1} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,3} \,a_{2,2}
+\,a_{3,1} \,b_{1,1} \,b_{2,3} \,b_{3,2}  +a_{1,3} \,a_{2,2} \,a_{3,1}
+\,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,2}
+\,b_{2,3} \,b_{3,1} -a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,3} \,b_{2,1}
+\,b_{3,2} +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,3} \,b_{2,2} \,b_{3,1}
+\end{align}
+\]</span></p>
+<p>The multiplication is a sign symmertic operation for determinant
+permuation, So indiviual signs for permutation terms are preserved by
+multiplcation.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Eigenvalues and eigenvectors are essential concepts in linear algebra
+with various applications. Understanding their properties, such as the
+relationship between eigenvalues and determinants, is crucial for
+solving problems in mathematics and science.</p>
+</body>
+</html>
