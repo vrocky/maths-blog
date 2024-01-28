@@ -365,27 +365,25 @@ m & n & o & p-\lambda
 
 $$
 
-$$
-\begin{align*}
-\text{det}(A - \lambda I) = & belo - bglm - bhio - celn + chin - chjm  - dejo - dgin + dgjm \\
-& - bgi(\lambda - p) + bhm(k - \lambda) - cej(\lambda - p) + clm(f - \lambda) + den(k - \lambda) + dio(f - \lambda) + gln(a - \lambda) + hjo(a - \lambda) \\
-& + be(k - \lambda)(\lambda - p) + ci(f - \lambda)(\lambda - p)  - dmf(k - \lambda) + gj(a - \lambda)(\lambda - p) - hnk(a - \lambda)(k - \lambda) - lo(a - \lambda)(f - \lambda) \\
-& - (a - \lambda)(f - \lambda)(k - \lambda)(\lambda - p)
-\end{align*}
 
-$$
+
+$b\,e\,l\,o-b\,g\,l\,m-b\,h\,i\,o-c\,e\,l\,n+c\,h\,i\,n-c\,h\,j\,m-d\,e\,j\,o-d\,g\,i\,n+d\,g\,j\,m-b\,g\,i\,{(\lambda -p)}+b\,h\,m\,{(k-\lambda )}-c\,e\,j\,{(\lambda -p)}+c\,l\,m\,{(f-\lambda )}+d\,e\,n\,{(k-\lambda )}+d\,i\,o\,{(f-\lambda )}+g\,l\,n\,{(a-\lambda )}+h\,j\,o\,{(a-\lambda )}+b\,e\,{(k-\lambda )}\,{(\lambda -p)}+c\,i\,{(f-\lambda )}\,{(\lambda -p)}-d\,m\,{(f-\lambda )}\,{(k-\lambda )}+g\,j\,{(a-\lambda )}\,{(\lambda -p)}-h\,n\,{(a-\lambda )}\,{(k-\lambda )}-l\,o\,{(a-\lambda )}\,{(f-\lambda )}-{(a-\lambda )}\,{(f-\lambda )}\,{(k-\lambda )}\,{(\lambda -p)}$
 
 Let, $P_n$ denotes the number of terms with $-\lambda$ in our row permutation terms from leibniz formula for determinants
 
-$P_4 = -(a - \lambda)(f - \lambda)(k - \lambda)(\lambda - p) \\$
+$P_4 =-{(a-\lambda )}\,{(f-\lambda )}\,{(k-\lambda )}\,{(\lambda -p)} \\$
 
 $P_3 = NIL  \\$
 
-$P_2 = + be(k - \lambda)(\lambda - p) + ci(f - \lambda)(\lambda - p)  - dmf(k - \lambda) + gj(a - \lambda)(\lambda - p) - hnk(a - \lambda)(k - \lambda) - lo(a - \lambda)(f - \lambda) \\$
+$P_2 = b\,e\,{(k-\lambda )}\,{(\lambda -p)}+c\,i\,{(f-\lambda )}\,{(\lambda -p)}-d\,m\,{(f-\lambda )}\,{(k-\lambda )}+g\,j\,{(a-\lambda )}\,{(\lambda -p)}-h\,n\,{(a-\lambda )}\,{(k-\lambda )}-l\,o\,{(a-\lambda )}\,{(f-\lambda )} \\$
 
-$P_1 =  - bgi(\lambda - p) + bhm(k - \lambda) - cej(\lambda - p) + clm(f - \lambda) + den(k - \lambda) + dio(f - \lambda) + gln(a - \lambda) + hjo(a - \lambda) \\$
+here, 
+$b e (k−λ)(λ−p) = -b e k p + (b e k + b e p) \lambda - b e \lambda^2$
 
-$P_0 =  belo - bglm - bhio - celn + chin - chjm  - dejo - dgin + dgjm\\$
+
+$P_1 = -b\,g\,i\,{(\lambda -p)}+b\,h\,m\,{(k-\lambda )}-c\,e\,j\,{(\lambda -p)}+c\,l\,m\,{(f-\lambda )}+d\,e\,n\,{(k-\lambda )}+d\,i\,o\,{(f-\lambda )}+g\,l\,n\,{(a-\lambda )}+h\,j\,o\,{(a-\lambda )} \\$
+
+$P_0 = b\,e\,l\,o-b\,g\,l\,m-b\,h\,i\,o-c\,e\,l\,n+c\,h\,i\,n-c\,h\,j\,m-d\,e\,j\,o-d\,g\,i\,n+d\,g\,j\,m-b\,g\,i\,$
 
 
 Lets expand, 
@@ -393,7 +391,85 @@ Lets expand,
 $P_4 = \lambda ^3 (-a-f-k-p)+\lambda ^2 (a (f+k+p)+f (k+p)+k p)+\lambda  (-a (f (k+p)+k p)-f k p)+a f k p+\lambda ^4 
 \\$
 
-$P_2 = -dmfk - pcif + pbek - ahnk + aflo + agjp + (dmf + agj + ahnk + bek + hnk k + alo + flo + bep + gjp + ci(f + p)) \lambda + (-be - ci - gj - hnk - lo) \lambda^2$
+$$
+    P_2 = -dm f k - (ci f + be k) p - 
+ a (hn k + f lo + gj p) + (a gj + a hn + be k + hn k + dm (f + k) + 
+    a lo + f lo + be p + gj p + ci (f + p)) \lambda + (-be - ci - 
+    dm - gj - hn - lo) \lambda]^2
+$$
+
+$P_1 = clm f + dio f + a gln + a hjo + bhm k + den k + bgi p + 
+ cej p + (-bgi - bhm - cej - clm - den - dio - gln - hjo) \lambda$
+
+
+So the final answer is 
+$$
+
+\text{det} (A - \lambda I ) =  
+\lambda^4 +{\left(-a-f-k-p\right)}\,\lambda^3 +{\left(a\,f-b\,e+a\,k-c\,i+a\,p-d\,m+f\,k-g\,j+f\,p-h\,n+k\,p-l\,o\right)}\,\lambda^2 +{\left(a\,g\,j-a\,f\,k+b\,e\,k-b\,g\,i-c\,e\,j+c\,f\,i-a\,f\,p+a\,h\,n+b\,e\,p-b\,h\,m-d\,e\,n+d\,f\,m-a\,k\,p+a\,l\,o+c\,i\,p-c\,l\,m-d\,i\,o+d\,k\,m-f\,k\,p+f\,l\,o+g\,j\,p-g\,l\,n-h\,j\,o+h\,k\,n\right)}\,\lambda +a\,f\,k\,p-a\,f\,l\,o-a\,g\,j\,p+a\,g\,l\,n+a\,h\,j\,o-a\,h\,k\,n-b\,e\,k\,p+b\,e\,l\,o+b\,g\,i\,p-b\,g\,l\,m-b\,h\,i\,o+b\,h\,k\,m+c\,e\,j\,p-c\,e\,l\,n-c\,f\,i\,p+c\,f\,l\,m+c\,h\,i\,n-c\,h\,j\,m-d\,e\,j\,o+d\,e\,k\,n+d\,f\,i\,o-d\,f\,k\,m-d\,g\,i\,n+d\,g\,j\,m
+
+$$
+
+
+Lets do some pattern practice 
+
+$(x - a) (x - b) = x^2 +{(-a-b)}\,x+a\,b\\$
+
+$(x - a) (x - b) (x - c) = x^3 +{(-a-b-c)}\,x^2 +{(ab+ca+cb)}\,x-a\,b\,c\\$
+
+$(x - a) (x - b) (x - c) (x - d) = x^4 +{\left(-a-b-c-d\right)}\,x^3 +{\left(a\,b+d\,{\left(a+b+c\right)}+c\,{\left(a+b\right)}\right)}\,x^2 +{\left(-d\,{\left(a\,b+c\,{\left(a+b\right)}\right)}-a\,b\,c\right)}\,x+a\,b\,c\,d$
+
+
+Looking at all the pattern I have seen its simple combinatrics and I have reached to the proof for Property 1 2 3 and 4,  
+
+
+For 5 , the determinant of a product of two matrices holds the following property:
+
+$A = \left(\begin{array}{ccc}
+a_{1,1}  & a_{2,1}  & a_{3,1} \\
+a_{1,2}  & a_{2,2}  & a_{3,2} \\
+a_{1,3}  & a_{2,3}  & a_{3,3} 
+\end{array}\right)$
+$B = \left(\begin{array}{ccc}
+b_{1,1}  & b_{2,1}  & b_{3,1} \\
+b_{1,2}  & b_{2,2}  & b_{3,2} \\
+b_{1,3}  & b_{2,3}  & b_{3,3} 
+\end{array}\right)$
+
+$A\, B = \left(\begin{array}{ccc}
+a_{1,1}  & a_{2,1}  & a_{3,1} \\
+a_{1,2}  & a_{2,2}  & a_{3,2} \\
+a_{1,3}  & a_{2,3}  & a_{3,3} 
+\end{array}\right)  \left(\begin{array}{ccc}
+b_{1,1}  & b_{2,1}  & b_{3,1} \\
+b_{1,2}  & b_{2,2}  & b_{3,2} \\
+b_{1,3}  & b_{2,3}  & b_{3,3} 
+\end{array}\right)$
+
+$A\, B =\left(\begin{array}{ccc}
+a_{1,1} \,b_{1,1} +a_{2,1} \,b_{1,2} +a_{3,1} \,b_{1,3}  & a_{1,1} \,b_{2,1} +a_{2,1} \,b_{2,2} +a_{3,1} \,b_{2,3}  & a_{1,1} \,b_{3,1} +a_{2,1} \,b_{3,2} +a_{3,1} \,b_{3,3} \\
+a_{1,2} \,b_{1,1} +a_{2,2} \,b_{1,2} +a_{3,2} \,b_{1,3}  & a_{1,2} \,b_{2,1} +a_{2,2} \,b_{2,2} +a_{3,2} \,b_{2,3}  & a_{1,2} \,b_{3,1} +a_{2,2} \,b_{3,2} +a_{3,2} \,b_{3,3} \\
+a_{1,3} \,b_{1,1} +a_{2,3} \,b_{1,2} +a_{3,3} \,b_{1,3}  & a_{1,3} \,b_{2,1} +a_{2,3} \,b_{2,2} +a_{3,3} \,b_{2,3}  & a_{1,3} \,b_{3,1} +a_{2,3} \,b_{3,2} +a_{3,3} \,b_{3,3} 
+\end{array}\right)$
+
+It is evident using combinatorics that $\text{det}(A)*\text{det}(B)$ will have same terms as $\text{det}(AB)$, but it is hard to visualize the sign of term.
+
+
+$\text{det}(A)  = a_{1,1} \,a_{2,2} \,a_{3,3} -a_{1,1} \,a_{2,3} \,a_{3,2} -a_{1,2} \,a_{2,1} \,a_{3,3} +a_{1,2} \,a_{2,3} \,a_{3,1} +a_{1,3} \,a_{2,1} \,a_{3,2} -a_{1,3} \,a_{2,2} \,a_{3,1}$
+
+$\text{det}(B)  =b_{1,1} \,b_{2,2} \,b_{3,3} -b_{1,1} \,b_{2,3} \,b_{3,2} -b_{1,2} \,b_{2,1} \,b_{3,3} +b_{1,2} \,b_{2,3} \,b_{3,1} +b_{1,3} \,b_{2,1} \,b_{3,2} -b_{1,3} \,b_{2,2} \,b_{3,1}$
+
+
+$\text{det}(A\,B) = \\a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,1} \,b_{2,3} \,b_{3,2} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,3} \,b_{2,2} \,b_{3,1} -a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,1} \,b_{2,3} \,b_{3,2} +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,2} \,b_{2,3} \,b_{3,1} -a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,3} \,b_{2,1} \,b_{3,2} +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,3} \,b_{2,2} \,b_{3,1} -a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,1} \,b_{2,3} \,b_{3,2} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,2} \,b_{2,3} \,b_{3,1} -a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,3} \,b_{2,1} \,b_{3,2} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,3} \,b_{2,2} \,b_{3,1} +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,1} \,b_{2,3} \,b_{3,2} -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,3} \,b_{2,2} \,b_{3,1} +a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,1} \,b_{2,3} \,b_{3,2} -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,3} \,b_{2,2} \,b_{3,1} -a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,1} \,b_{2,3} \,b_{3,2} +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,2} \,b_{2,3} \,b_{3,1} -a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,3} \,b_{2,1} \,b_{3,2} +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,3} \,b_{2,2} \,b_{3,1}$
+
+
+
+$det(AB)=$
+
+$a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,1} \,b_{2,3} \,b_{3,2} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,1} \,a_{2,2} \,a_{3,3} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\-  a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,1} \,b_{2,3} \,b_{3,2} +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,2} \,b_{2,3} \,b_{3,1} -a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,3} \,b_{2,1} \,b_{3,2}  +a_{1,1} \,a_{2,3} \,a_{3,2} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\-a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,1} \,b_{2,3} \,b_{3,2} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,2} \,b_{2,3} \,b_{3,1}  -a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,3} \,b_{2,1} \,b_{3,2} +a_{1,2} \,a_{2,1} \,a_{3,3} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\ +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,1} \,b_{2,3} \,b_{3,2}  -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,2} \,a_{2,3} \,a_{3,1} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\+a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,1} \,b_{2,2} \,b_{3,3} -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,1} \,b_{2,3} \,b_{3,2}  -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,2} \,b_{2,1} \,b_{3,3} +a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,2} \,b_{2,3} \,b_{3,1} +a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,3} \,b_{2,1} \,b_{3,2} -a_{1,3} \,a_{2,1} \,a_{3,2} \,b_{1,3} \,b_{2,2} \,b_{3,1} \\-a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,1} \,b_{2,2} \,b_{3,3} +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,1} \,b_{2,3} \,b_{3,2}  +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,2} \,b_{2,1} \,b_{3,3} -a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,2} \,b_{2,3} \,b_{3,1} -a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,3} \,b_{2,1} \,b_{3,2} +a_{1,3} \,a_{2,2} \,a_{3,1} \,b_{1,3} \,b_{2,2} \,b_{3,1}$
+
+
+
 
 ## Conclusion
 
