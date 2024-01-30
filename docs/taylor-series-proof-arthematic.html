@@ -206,7 +206,8 @@ A_3 (\Delta x)^2 + A_4 (\Delta x)^3 + \ldots + A_{n+1} (\Delta
 x)^n\)</span></p>
 <p>clearly here, <span class="math inline">\(A_0 = f(x)\)</span></p>
 <p>Lets try another,</p>
-<p>$f’(x) = $</p>
+<p><span class="math display">\[f&#39;(x) = \frac{f(x + \Delta x) -
+f(x)}{\Delta x}\]</span></p>
 <p>Substituting the expression for <span class="math inline">\(f(x +
 \Delta x)\)</span>, we get:</p>
 <p><span class="math inline">\(f&#39;(x) = \lim_{\Delta x \to 0}
@@ -295,7 +296,7 @@ intuitive understanding of the second derivative.</p>
 <p>So now we worked</p>
 <p><span class="math inline">\(f&#39;(x) =\)</span> <span
 class="math inline">\(\frac{f\left(a+h\right)-f\left(a\right)}{h}\)</span></p>
-<p>Similarly we arrive at result for $$ <span
+<p>Similarly we arrive at result for $$<span
 class="math display">\[\begin{align}
 
 f&#39;&#39;(a) &amp;=
@@ -320,13 +321,13 @@ f^6(a)
 }   \\
 
 
-\end{align}\]</span> $$ Now we are going to put <span
-class="math inline">\(f(x +  \Delta x) = A_0 + A_1 (\Delta x) + A_3
-(\Delta x)^2 + A_4 (\Delta x)^3 + \ldots + A_{n+1} (\Delta x)^n\)</span>
-to above difference equations</p>
+\end{align}\]</span>$$</p>
+<p>Now we are going to put <span class="math inline">\(f(x +  \Delta x)
+= A_0 + A_1 (\Delta x) + A_3 (\Delta x)^2 + A_4 (\Delta x)^3 + \ldots +
+A_{n+1} (\Delta x)^n\)</span> to above difference equations</p>
 <p>Here,</p>
 <p>Also,</p>
-<p>$$ <span class="math display">\[\begin{align}
+<p>$$<span class="math display">\[\begin{align}
 
 f(a + h) &amp;= A_0 + A_1 (h) + A_2 (h)^2 + A_3 (h)^3 + \ldots + A_{n+1}
 (h)^n  \\
@@ -352,7 +353,7 @@ f(a + 5h) &amp;= A_0 +{\left(5\,h\right)}\,A_1 +{\left(25\,h^2
 \right)}\,A_4 +{\left(3125\,h^5 \right)}\,A_5 +{\left(15625\,h^6
 \right)}\,A_6
 
-\end{align}\]</span> $$</p>
+\end{align}\]</span>$$</p>
 <p>So now,</p>
 <p>Lets find <span class="math inline">\(f&#39;(x)\)</span> ,</p>
 <p><span class="math inline">\(f&#39;(x) =\)</span> <span
@@ -447,7 +448,7 @@ f&#39;&#39;&#39;(a)
       f&#39;&#39;&#39;(a) &amp;\approx 6\,A_3
 \end{aligned}\]</span>
 <p>$$</p>
-<p>Now, we some results, $$ <span class="math display">\[\begin{align}
+<p>Now, we some results, $$<span class="math display">\[\begin{align}
 
     f&#39;(x) &amp;= A_1 +h\,A_2 +h^2 \,A_3 +h^3 \,A_4 +h^4 \,A_5 +h^5
 \,A_6 + \ldots\\
@@ -466,9 +467,9 @@ f&#39;&#39;&#39;(a)
 +{\left(1560\,h^2 \right)}\,A_6  + \ldots\\
 
     f^5(x) &amp;= 120\,A_5 +{\left(1800\,h\right)}\,A_6 + \ldots
-\end{align}\]</span> $$</p>
+\end{align}\]</span>$$</p>
 <p>this gives us</p>
-<p>$$ <span class="math display">\[\begin{align}
+<p>$$<span class="math display">\[\begin{align}
 
     f&#39;(x) &amp;\approx A_1 \\
 
@@ -482,30 +483,28 @@ f&#39;&#39;&#39;(a)
 
     f^5(x) &amp;\approx 120\,A_5 \\
 
-\end{align}\]</span> $$ which tells that the coefficients <span
-class="math inline">\(A_0, A_1, A_2, A_3, A_4, A_5\)</span> in the
-Taylor series expansion are determined by the derivatives of the
-function <span class="math inline">\(f(x)\)</span> evaluated at the
-point <span class="math inline">\(x\)</span> where you are expanding the
-series. Here are the first six coefficients:</p>
-<p><span class="math display">\[
-\begin{align*}
+\end{align}\]</span>$$</p>
+<p>which tells that the coefficients <span class="math inline">\(A_0,
+A_1, A_2, A_3, A_4, A_5\)</span> in the Taylor series expansion are
+determined by the derivatives of the function <span
+class="math inline">\(f(x)\)</span> evaluated at the point <span
+class="math inline">\(x\)</span> where you are expanding the series.
+Here are the first six coefficients:</p>
+<p><span class="math display">\[\begin{align*}
 A_0 &amp;= f(x) \\
 A_1 &amp;= f&#39;(x) \\
 A_2 &amp;= \frac{f&#39;&#39;(x)}{2!} \\
 A_3 &amp;= \frac{f&#39;&#39;&#39;(x)}{3!} \\
 A_4 &amp;= \frac{f&#39;&#39;&#39;&#39;(x)}{4!} \\
 A_5 &amp;= \frac{f&#39;&#39;&#39;&#39;&#39;(x)}{5!} \\
-\end{align*}
-\]</span></p>
+\end{align*}\]</span></p>
 <p>The Taylor series expansion for the function <span
 class="math inline">\(f(x + \Delta x)\)</span> around the point <span
 class="math inline">\(x\)</span> is given by:</p>
-<p><span class="math display">\[
-f(x + \Delta x) = A_0 + A_1 (\Delta x) + \frac{A_2}{2!} (\Delta x)^2 +
-\frac{A_3}{3!} (\Delta x)^3 + \frac{A_4}{4!} (\Delta x)^4 +
-\frac{A_5}{5!} (\Delta x)^5 + \ldots
-\]</span></p>
+<p><span class="math display">\[f(x + \Delta x) = A_0 + A_1 (\Delta x) +
+\frac{A_2}{2!} (\Delta x)^2 + \frac{A_3}{3!} (\Delta x)^3 +
+\frac{A_4}{4!} (\Delta x)^4 + \frac{A_5}{5!} (\Delta x)^5 +
+\ldots\]</span></p>
 <p>You can continue this pattern for higher-order terms by increasing
 the power of <span class="math inline">\(\Delta x\)</span> and using the
 corresponding coefficients <span class="math inline">\(A_k\)</span>,

@@ -27,7 +27,7 @@ Lets try another,
 
 
 
-$f'(x) = \frac{f(x + \Delta x) - f(x)}{\Delta x} $
+$$f'(x) = \frac{f(x + \Delta x) - f(x)}{\Delta x}$$
 
 
 
