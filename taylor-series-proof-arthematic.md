@@ -124,14 +124,14 @@ $$\begin{align}
 f(a + h) &= A_0 + A_1 (h) + A_2 (h)^2 + A_3 (h)^3 + \ldots + A_{n+1} (h)^n  \\
 
 
-f(a + 2h) &= A_0 +{\left(2\,h\right)}\,A_1 +{\left(4\,h^2 \right)}\,A_2 +{\left(8\,h^3 \right)}\,A_3 +{\left(16\,h^4 \right)}\,A_4 +{\left(32\,h^5 \right)}\,A_5 +{\left(64\,h^6 \right)}\,A_6   \\
+f(a + 2h) &= A_0 +{\left(2\,h\right)}\,A_1 +{\left(4\,h^2 \right)}\,A_2 +{\left(8\,h^3 \right)}\,A_3 +{\left(16\,h^4 \right)}\,A_4 +{\left(32\,h^5 \right)}\,A_5 +{\left(64\,h^6 \right)}\,A_6 + \ldots   \\
 
-f(a + 3h) &= A_0 +{\left(3\,h\right)}\,A_1 +{\left(9\,h^2 \right)}\,A_2 +{\left(27\,h^3 \right)}\,A_3 +{\left(81\,h^4 \right)}\,A_4 +{\left(243\,h^5 \right)}\,A_5 +{\left(729\,h^6 \right)}\,A_6   \\
+f(a + 3h) &= A_0 +{\left(3\,h\right)}\,A_1 +{\left(9\,h^2 \right)}\,A_2 +{\left(27\,h^3 \right)}\,A_3 +{\left(81\,h^4 \right)}\,A_4 +{\left(243\,h^5 \right)}\,A_5 +{\left(729\,h^6 \right)}\,A_6 + \ldots  \\
 
 
-f(a + 4h) &= A_0 +{\left(4\,h\right)}\,A_1 +{\left(16\,h^2 \right)}\,A_2 +{\left(64\,h^3 \right)}\,A_3 +{\left(256\,h^4 \right)}\,A_4 +{\left(1024\,h^5 \right)}\,A_5 +{\left(4096\,h^6 \right)}\,A_6  \\
+f(a + 4h) &= A_0 +{\left(4\,h\right)}\,A_1 +{\left(16\,h^2 \right)}\,A_2 +{\left(64\,h^3 \right)}\,A_3 +{\left(256\,h^4 \right)}\,A_4 +{\left(1024\,h^5 \right)}\,A_5 +{\left(4096\,h^6 \right)}\,A_6 +  \ldots \\
 
-f(a + 5h) &= A_0 +{\left(5\,h\right)}\,A_1 +{\left(25\,h^2 \right)}\,A_2 +{\left(125\,h^3 \right)}\,A_3 +{\left(625\,h^4 \right)}\,A_4 +{\left(3125\,h^5 \right)}\,A_5 +{\left(15625\,h^6 \right)}\,A_6 
+f(a + 5h) &= A_0 +{\left(5\,h\right)}\,A_1 +{\left(25\,h^2 \right)}\,A_2 +{\left(125\,h^3 \right)}\,A_3 +{\left(625\,h^4 \right)}\,A_4 +{\left(3125\,h^5 \right)}\,A_5 +{\left(15625\,h^6 \right)}\,A_6 + \ldots
 
 \end{align}$$
 
@@ -166,9 +166,9 @@ f(a + 2h) &= A_0 +{\left(2\,h\right)}\,A_1 +{\left(4\,h^2 \right)}\,A_2 +{\left(
  2f(a + h) &= 2A_0 + 2A_1 (h) + 2A_2 (h)^2 + 2A_3 (h)^3 + \ldots + 2A_{n+1} (h)^n \\
   f(a) &= A_0 \\ \\
 
-   f\left(a\right)-2\,f\left(a+h\right)+f\left(a+2\,h\right) &=  0 + 0 + 2\,A_2 +{\left(6\,h\right)}\,A_3 +{\left(14\,h^2 \right)}\,A_4 +{\left(30\,h^3 \right)}\,A_5 +{\left(62\,h^4 \right)}\,A_6 + ldots \\ \\
+   f\left(a\right)-2\,f\left(a+h\right)+f\left(a+2\,h\right) &=  0 + 0 + 2\,A_2 +{\left(6\,h\right)}\,A_3 +{\left(14\,h^2 \right)}\,A_4 +{\left(30\,h^3 \right)}\,A_5 +{\left(62\,h^4 \right)}\,A_6 + \ldots \\ \\
 
-    f''(a) = \frac{f\left(a\right)-2\,f\left(a+h\right)+f\left(a+2\,h\right)}{h^2 } &= 2\,A_2 +{\left(6\,h\right)}\,A_3 +{\left(14\,h^2 \right)}\,A_4 +{\left(30\,h^3 \right)}\,A_5 +{\left(62\,h^4 \right)}\,A_6 \\\\\\
+    f''(a) = \frac{f\left(a\right)-2\,f\left(a+h\right)+f\left(a+2\,h\right)}{h^2 } &= 2\,A_2 +{\left(6\,h\right)}\,A_3 +{\left(14\,h^2 \right)}\,A_4 +{\left(30\,h^3 \right)}\,A_5 +{\left(62\,h^4 \right)}\,A_6 +  \ldots \\\\\\
 
       f''(a) &\approx 2\,A_2
 \end{aligned}$$
