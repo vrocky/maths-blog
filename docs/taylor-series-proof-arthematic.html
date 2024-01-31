@@ -512,5 +512,280 @@ the power of <span class="math inline">\(\Delta x\)</span> and using the
 corresponding coefficients <span class="math inline">\(A_k\)</span>,
 where <span class="math inline">\(k\)</span> is the order of the
 derivative.</p>
+<h2 id="insights-for-proof-for-differentiation-formulas">Insights for
+proof for differentiation formulas</h2>
+<p>We can easily see <span class="math inline">\(A_1\)</span> cofficient
+and find derivative of and instead of remembering derivative lets keep
+these expansion in mind.</p>
+<h2 id="simple-formulas">Simple formulas</h2>
+<ol type="1">
+<li><p><span class="math inline">\((x + \Delta x)^2 = x^2 + 2x\Delta x +
+(\Delta x)^2\)</span></p></li>
+<li><p><span class="math inline">\((x + \Delta x)^3 = x^3 + 3x^2\Delta x
++ 3x(\Delta x)^2 + (\Delta x)^3\)</span></p></li>
+<li><p><span class="math inline">\((x + \Delta x)^4 = x^4 + 4x^3\Delta x
++ 6x^2(\Delta x)^2 + 4x(\Delta x)^3 + (\Delta x)^4\)</span></p></li>
+<li><p><span class="math inline">\((x + \Delta x)^5 = x^5 + 5x^4\Delta x
++ 10x^3(\Delta x)^2 + 10x^2(\Delta x)^3 + 5x(\Delta x)^4 + (\Delta
+x)^5\)</span></p></li>
+<li><p><span class="math inline">\((x + \Delta x)^6 = x^6 + 6x^5\Delta x
++ 15x^4(\Delta x)^2 + 20x^3(\Delta x)^3 + 15x^2(\Delta x)^4 + 6x(\Delta
+x)^5 + (\Delta x)^6\)</span></p></li>
+<li><p><span class="math inline">\((x + \Delta x)^7 = x^7 + 7x^6\Delta x
++ 21x^5(\Delta x)^2 + 35x^4(\Delta x)^3 + 35x^3(\Delta x)^4 +
+21x^2(\Delta x)^5 + 7x(\Delta x)^6 + (\Delta x)^7\)</span></p></li>
+<li><p><span class="math inline">\(\cos(x + \Delta x) =
+\cos(x)\cos(\Delta x) - \sin(x)\sin(\Delta x) \approx \cos(x) - \sin(x)
+\Delta x\)</span></p></li>
+<li><p><span class="math inline">\(\sin(x + \Delta x) =
+\sin(x)\cos(\Delta x) + \cos(x)\sin(\Delta x)  \approx
+\sin(x)\cos(\Delta x) + \cos(x)\Delta x\)</span></p></li>
+</ol>
+<p><br></p>
+<h2 id="multiplication-rule-for-differentiation">Multiplication rule for
+differentiation</h2>
+<p>Lets proof multiplication rule for differentiation for next
+steps:</p>
+<p>Let ,</p>
+<p><span class="math inline">\(f(x + h)  = A_0 + A_1 h + A_2 h^2 + A_3
+h^3 + A_4 h^4 + A_5 h^5 + A_6 h^6+\ldots\)</span></p>
+<p><span class="math inline">\(g(x + h) = B_0 + B_1 h + B_2 h^2 + B_3
+h^3 + B_4 h^4 + B_5 h^5 + B_6 h^6 + \ldots\)</span></p>
+<p>Now <span class="math display">\[
+f(x + h) g(x + h) = A_0 \,B_0 +\mathrm{h}\,{
+  \left(A_0 \,B_1 +A_1 \,B_0 \right)}
+  +{\mathrm{h}}^2 \,{\left(A_0 \,B_2 +A_1 \,B_1 +A_2 \,B_0 \right)}
+  +{\mathrm{h}}^3 \,{\left(A_0 \,B_3 +A_1 \,B_2 +A_2 \,B_1 +A_3 \,B_0
+\right)}
+  +{\mathrm{h}}^4 \,{\left(A_0 \,B_4 +A_1 \,B_3 +A_2 \,B_2 +A_3 \,B_1
++A_4 \,B_0 \right)}+  \ldots
+\]</span> The coefficient of <span class="math inline">\(dx\)</span> in
+the above equation serves as a clear manifestation of the chain rule’s
+role in differentiation.</p>
+<h2 id="chain-rule-for-differentiation">Chain rule for
+differentiation</h2>
+<p>Lets try to proof chain rule for differentiation</p>
+<h3 id="statement">Statement</h3>
+<p>Let ,</p>
+<p><span class="math inline">\(f(x + h)  = A_0 + A_1 h + A_2 h^2 + A_3
+h^3 + A_4 h^4 + A_5 h^5 + A_6 h^6 + \ldots\)</span></p>
+<p><span class="math inline">\(g(x + h) = B_0 + B_1 h + B_2 h^2 + B_3
+h^3 + B_4 h^4 + B_5 h^5 + B_6 h^6 + \ldots\)</span></p>
+<p>Now we want to analyse the cofficient of h in expansion of <span
+class="math inline">\(f(g(x+h))\)</span></p>
+<h3 id="proof-idea-workout">Proof Idea workout</h3>
+<p>before working through this lets take simple case,</p>
+<p>for now take case where</p>
+<p><span class="math inline">\(f(x + h)  = A_0 + A_1 h + A_2 h^2 + A_3
+h^3 + A_4 h^4 + A_5 h^5 + A_6 h^6 + \ldots\)</span></p>
+<p><span class="math inline">\(g(x + h) = B_0 + h = g(x) +
+h\)</span></p>
+<p>Let say,</p>
+<p><span class="math inline">\(f(g(x) + h) =  C_0 + C_1 h + C_2 h^2 +
+C_3 h^3 + C_4 h^4 + C_5 h^5 + C_6 h^6 + \ldots\)</span></p>
+<p><span class="math inline">\(f(g(x+h))= f(B_0 + h)
+=  f(g(x)+h)  =  C_0 + C_1 h + C_2 h^2 + C_3 h^3 + C_4 h^4 + C_5 h^5 +
+C_6 h^6 + \ldots\)</span></p>
+<p>another case</p>
+<p><span class="math inline">\(f(g(x) + h) =  C_0 + C_1 h + C_2 h^2 +
+C_3 h^3 + C_4 h^4 + C_5 h^5 + C_6 h^6 + \ldots\)</span></p>
+<p><span class="math inline">\(g(x + h) = B_0 + B_1 h  = f(g(x) + B_1
+h)\)</span></p>
+<p><span class="math inline">\(f(g(x+h))= f(B_0 + B_1 h) = f(g(x) + B_1
+h)  =  C_0 + C_1 B_1 h + C_2 B_1^2 h^2 + C_3 B_1^3 h^3 + C_4 B_1^4 h^4 +
+C_5 B_1^5 h^5 + C_6 B_1^6 h^6 + \ldots\)</span></p>
+<p>we can notice the cofficient of h gives us <span
+class="math inline">\(\frac{d}{dx} [f(g(x))] = f&#39;(g(x)) \cdot
+g&#39;(x)\)</span></p>
+<h3 id="proof">Proof</h3>
+<p>Now lets workout on general case,</p>
+<p><span class="math inline">\(g(x + h) = B_0 + B_1 h + B_2 h^2 + B_3
+h^3 + B_4 h^4 + B_5 h^5 + B_6 h^6 + \ldots\)</span></p>
+$$
+<span class="math display">\[\begin{aligned}
+
+f(g(x+h)) &amp;= f(B_0 + B_1 h + B_2 h^2 + \ldots ) \\
+f(g(x+h)) &amp;= f(B_0 + h(B_1  + B_2 h + B_3 h^2 + \ldots) )\\
+  f(g(x+h)) &amp;= f(g(x) + h(B_1  + B_2 h + B_3 h^2 + \ldots) )  \\\\
+f(g(x+h)) &amp;= C_0 + \\
+&amp;  C_1 (B_1  + B_2 h + B_3 h^2 + \ldots) h  +\\
+&amp;  C_2 (B_1  + B_2 h + B_3 h^2 + \ldots)^2 h^2  +\\
+&amp;  C_3 (B_1  + B_2 h + B_3 h^2 + \ldots)^3 h^3  +\\
+&amp;  C_4 (B_1  + B_2 h + B_3 h^2 + \ldots)^4 h^4 + \\
+&amp;  C_5 (B_1  + B_2 h + B_3 h^2 + \ldots)^5 h^5 + \ldots  \\\\
+
+f(g(x+h)) &amp;= C_0 + \\
+&amp;  C_1 (B_1 h + B_2 h^2 + \ldots )  +\\
+&amp;  C_2 (B_1 h + B_2 h^2 + \ldots )^2   +\\
+&amp;  C_3 (B_1 h + B_2 h^2 + \ldots )^3  +\\
+&amp;  C_4 (B_1 h + B_2 h^2 + \ldots )^4  + \\
+&amp;  C_5 (B_1 h + B_2 h^2 + \ldots )^5  + \ldots \\ \\
+
+
+f(g(x+h)) &amp;= C_0 +
+C_1 (B_1 h + B_2 h^2 + \ldots )  +  C_2 (B_1 h + B_2 h^2 + \ldots
+)^2   +  C_3 (B_1 h + B_2 h^2 + \ldots )^3  +
+  C_4 (B_1 h + B_2 h^2 + \ldots )^4  +
+  C_5 (B_1 h + B_2 h^2 + \ldots )^5  + \ldots \quad(1)
+
+
+\end{aligned}\]</span>
+<p>$$</p>
+<p>we can see from these equations that cofficient of <span
+class="math inline">\(h^0, h^1 , h^2, ...\)</span> are</p>
+<p><span class="math display">\[\begin{aligned}
+\text{Coff}(f(g(x+h)),h^0) &amp;= C_0 \\
+\text{Coff}(f(g(x+h)),h^1) &amp;= B_1 C_1 \\
+\text{Coff}(f(g(x+h)),h^2) &amp;= B_2 C_1 +  B_1 C_2 \\
+\text{Coff}(f(g(x+h)),h^3) &amp;= B_3 C_1 +  B_2 C_2 + B_1 C_3 \\
+\text{Coff}(f(g(x+h)),h^4) &amp;= B_4 C_1 +  B_3 C_2 + B_2 C_3 + B_1 C_4
+\end{aligned}\]</span></p>
+<p>Well the cofficient of h gives us <span
+class="math inline">\(\frac{d}{dx} [f(g(x))] = f&#39;(g(x)) \cdot
+g&#39;(x)\)</span></p>
+<h3 id="excercise">Excercise</h3>
+<p><span class="math inline">\(\frac{d}{dx}\cos(x^2)\)</span></p>
+<p>here ,</p>
+<p><span class="math inline">\(f(x)= \cos(x)\)</span> and $g(x) = x^2
+$</p>
+<p>Now, <span class="math inline">\(g(x+h) = (x^2 + 2 x h
++  h^2)\)</span></p>
+<p>here we can see <span class="math inline">\(f(g(x+h))\)</span> is not
+lucky enough like <span class="math inline">\(f(x+h)\)</span> to have
+<span class="math inline">\(+h\)</span> in function which we know
+expansion of but looking closer it has <span
+class="math inline">\(+h\)</span> but with some multiplier from <span
+class="math inline">\((1)\)</span></p>
+$$
+<span class="math display">\[\begin{aligned}
+
+f(g(x+h)) &amp;= f(B_0 + B_1 h + B_2 h^2 + \ldots ) \\\\
+
+\cos(x + \Delta x) &amp;= \cos(x)\cos(\Delta x) - \sin(x)\sin(\Delta x)
+\approx \cos(x) - \sin(x) \Delta x \\
+
+\therefore \, \cos(x^2 + 2x h +  h^2) &amp;=  \cos(x^2) -
+\sin(x^2)\Delta x \\
+
+                                      &amp;= \cos(x^2) - \sin(x^2)(2x h
++  h^2)
+\end{aligned}\]</span>
+<p>$$</p>
+<p>from this expansion it is evident that <span
+class="math inline">\(\frac{d}{dx}\cos(x^2) = -
+\sin(x^2)(2x)\)</span></p>
+<h2 id="division-properties-and-infinte-series">Division Properties and
+Infinte series</h2>
+<p>Lets work for <span
+class="math inline">\(\frac{d}{dx}\frac{1}{x}\)</span> or <span
+class="math inline">\(\frac{d}{dx}{x^{-1}}\)</span></p>
+<p>So lets expand <span class="math inline">\((x+h)^{-1}\)</span> <span
+class="math display">\[
+f(x + h) = \frac{1}{x+h}
+\]</span></p>
+<p>What is your idea to get it into form so that we can get cofficient
+of <span class="math inline">\(h\)</span> . Its strange how i was
+missing on this concept from so long . Here we have to use <strong>Long
+Division</strong> method.</p>
+<p>If you forgot what is long division let me remind you</p>
+<h3 id="long-division-revision">Long division Revision</h3>
+<p>To perform the long division for <span
+class="math inline">\(\frac{x^4 - 4}{x + 2}\)</span> and represent it in
+LaTeX, we’ll follow the same method as shown in your example. Let’s go
+through the division step by step and then I’ll provide the LaTeX code
+for it.</p>
+<p>Long Division Steps: 1. Divide the first term of the numerator (<span
+class="math inline">\(x^4\)</span>) by the first term of the denominator
+(<span class="math inline">\(x\)</span>), which gives <span
+class="math inline">\(x^3\)</span>. 2. Multiply the entire denominator
+(<span class="math inline">\(x + 2\)</span>) by <span
+class="math inline">\(x^3\)</span> and subtract this from the numerator.
+3. Bring down the next term of the numerator and repeat these steps
+until all terms of the numerator are used.</p>
+<p><span class="math display">\[\begin{array}{c|cccc}
+&amp; x^3 &amp; -2x^2 &amp; +4x &amp; -8 \\
+\hline
+x + 2 &amp; x^4 &amp; 0 &amp; 0 &amp; -1 \\
+&amp; x^4 &amp; +2x^3 &amp; &amp; \\
+\hline
+&amp; &amp; -2x^3 &amp; &amp; -1 \\
+&amp; &amp; -2x^3 &amp; -4x^2 &amp; \\
+\hline
+&amp; &amp; &amp; 4x^2 &amp; -1 \\
+&amp; &amp; &amp; 4x^2 &amp; +8x \\
+\hline
+&amp; &amp; &amp; &amp; -8x - 1 \\
+&amp; &amp; &amp; &amp; -8x - 16 \\
+\hline
+&amp; &amp; &amp; &amp; 15 \\
+\end{array}\]</span></p>
+<p>the long division process of <span class="math inline">\(x^4 -
+1\)</span> by <span class="math inline">\(x + 2\)</span> into a
+step-by-step equation format:</p>
+<p><span class="math display">\[\begin{align*}
+x^4 - 1 &amp; = (x + 2)(x^3) - 2x^3 - 1 \\
+&amp; = (x + 2)(x^3) - (x + 2)(2x^2) + 4x^2 - 1 \\
+&amp; = (x + 2)(x^3) - (x + 2)(2x^2) + (x + 2)(4x) - 8x - 1 \\
+&amp; = (x + 2)(x^3) - (x + 2)(2x^2) + (x + 2)(4x) - (x + 2)(-8) - 15 \\
+&amp; = (x + 2)(x^3 - 2x^2 + 4x - 8) - 15.
+\end{align*}\]</span></p>
+<p>This is the step-by-step breakdown of the long division process for
+<span class="math inline">\(x^4 - 1\)</span> divided by <span
+class="math inline">\(x + 2\)</span>.</p>
+<p>Lets do the same with <span class="math inline">\(\frac{1}{x +
+h}\)</span>,</p>
+<p>You can derive the series expansion for <span
+class="math inline">\(\frac{1}{x + h}\)</span> using the method you’ve
+mentioned, which is to expand the expression step by step. Here’s the
+derivation:</p>
+<p>Starting with <span class="math inline">\(\frac{1}{x + h}\)</span>,
+you can rewrite it as:</p>
+<p><span class="math display">\[
+\frac{1}{x + h} = (x + h) \left(\frac{1}{x}\right) - \frac{h}{x}
+\]</span></p>
+<p>Now, you can expand the first term on the right side:</p>
+<p><span class="math display">\[
+= (x + h) \left(\frac{1}{x}\right) - (x + h)\left(\frac{h}{x^2}\right)
+\]</span></p>
+<p>Next, expand the second term:</p>
+<p><span class="math display">\[
+= (x + h) \left(\frac{1}{x}\right) - (x + h)\left(\frac{h}{x^2}\right) +
+(x + h)\left(\frac{h^2}{x^3}\right)
+\]</span></p>
+<p>We can continue this process by expanding each new term obtained:</p>
+<p><span class="math display">\[
+= (x + h) \left(\frac{1}{x}\right) - (x + h)\left(\frac{h}{x^2}\right) +
+(x + h)\left(\frac{h^2}{x^3}\right) - (x +
+h)\left(\frac{h^3}{x^4}\right) + \ldots
+\]</span></p>
+<p>Notice that each term alternates in sign and involves higher powers
+of <span class="math inline">\(h\)</span> and lower powers of <span
+class="math inline">\(x\)</span>. The general term in the series
+expansion is given by:</p>
+<p><span class="math display">\[
+\frac{(-1)^n h^n}{x^{n+1}}
+\]</span></p>
+<p>Step 6: Final Series Expansion The series expansion for <span
+class="math inline">\(\frac{1}{x + h}\)</span> is obtained by summing
+all these terms:</p>
+<p><span class="math display">\[
+\frac{1}{x + h} = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} -
+\frac{h^3}{x^4} + \frac{h^4}{x^5} - \ldots
+\]</span></p>
+<p>In this tutorial, we have learned how to derive the series expansion
+for <span class="math inline">\(\frac{1}{x + h}\)</span> using algebraic
+manipulation. By breaking down the expression into a series of terms and
+identifying the general term, we can express the function as an infinite
+sum involving powers of <span class="math inline">\(h\)</span> and <span
+class="math inline">\(x\)</span>. This technique is valuable in
+mathematics and science for approximating functions and solving complex
+problems.</p>
+<p>This is the series expansion for <span
+class="math inline">\(\frac{1}{x + h}\)</span>.</p>
+<p>and clearly cofficient of <span class="math inline">\(h\)</span> gets
+us <span class="math inline">\(\frac{d}{dx}\frac{1}{x}\)</span> = <span
+class="math inline">\(\frac{1}{-x^2}\)</span> or <span
+class="math inline">\(\frac{d}{dx}{x^{-1}}\)</span> = <span
+class="math inline">\(-x^{-2}\)</span>.</p>
 </body>
 </html>
