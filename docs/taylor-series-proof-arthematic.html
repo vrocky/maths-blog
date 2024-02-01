@@ -800,12 +800,14 @@ not all functions can be easily expressed as simple power series without
 Taylor series expansion.</p>
 <h2 id="some-infinite-series-formulas">Some Infinite series
 formulas</h2>
-<p><span class="math inline">\(\frac{1}{x+1} = \sum_{n=0}^{\infty}
-(-1)^n x^n\)</span> , For <span class="math inline">\(|x| &lt;
-1\)</span>, series converges</p>
-<p><span class="math inline">\(\frac{1}{x+1} = \sum_{n=0}^{\infty}
-(-1)^n \frac{1}{x}^n\)</span> , For <span class="math inline">\(|x| &gt;
-1\)</span>, series converges</p>
+<h3 id="frac1x1-sum_n0infty--1n-xn-for-x-1-series-converges"><span
+class="math inline">\(\frac{1}{x+1} = \sum_{n=0}^{\infty} (-1)^n
+x^n\)</span> , For <span class="math inline">\(|x| &lt; 1\)</span>,
+series converges</h3>
+<h3 id="frac1x1-sum_n0infty--1n-frac1xn-for-x-1-series-converges"><span
+class="math inline">\(\frac{1}{x+1} = \sum_{n=0}^{\infty} (-1)^n
+\frac{1}{x}^n\)</span> , For <span class="math inline">\(|x| &gt;
+1\)</span>, series converges</h3>
 <h3 id="proof-1">Proof:</h3>
 <p>We can proof the both with our long division that we take as
 elementary proof,</p>
@@ -847,17 +849,18 @@ the sum is <span class="math inline">\(\frac{x^{-1}}{1 - (-x^{-1})} =
 \frac{1}{x + 1} = (1 + x)^{-1}\)</span>, which is valid for <span
 class="math inline">\(|x| &gt; 1\)</span>.</li>
 </ul>
-<p><br></p>
-<p><br></p>
-<p><br></p>
-<p><span class="math inline">\(\frac{1}{ax+by}= \frac{1}{by}
-\sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n\)</span> , For
-<span class="math inline">\(|\frac{x}{y}| &lt; 1\)</span>, series
-converges</p>
-<p><span class="math inline">\(\frac{1}{ax+by}= \frac{1}{bx}
-\sum_{n=0}^{\infty} (-1)^n \left(\frac{by}{ax}\right)^n\)</span> , For
-<span class="math inline">\(|\frac{y}{x}| &lt; 1\)</span>, series
-converges</p>
+<h3
+id="frac1axby-frac1by-sum_n0infty--1n-leftfracaxbyrightn-for-fracxy-1-series-converges"><span
+class="math inline">\(\frac{1}{ax+by}= \frac{1}{by} \sum_{n=0}^{\infty}
+(-1)^n \left(\frac{ax}{by}\right)^n\)</span> , For <span
+class="math inline">\(|\frac{x}{y}| &lt; 1\)</span>, series
+converges</h3>
+<h3
+id="frac1axby-frac1bx-sum_n0infty--1n-leftfracbyaxrightn-for-fracyx-1-series-converges"><span
+class="math inline">\(\frac{1}{ax+by}= \frac{1}{bx} \sum_{n=0}^{\infty}
+(-1)^n \left(\frac{by}{ax}\right)^n\)</span> , For <span
+class="math inline">\(|\frac{y}{x}| &lt; 1\)</span>, series
+converges</h3>
 <h3 id="proof-2">Proof:</h3>
 <p>$$ <span class="math display">\[\begin{align*}
   \frac{1}{k+1} &amp;= \sum_{n=0}^{\infty} (-1)^n k^n \\
@@ -1008,5 +1011,96 @@ of power of <span class="math inline">\(h\)</span></p>
             &amp;= \log(x) + \frac{h}{x}
 \end{align*}\]</span></p>
 <p>$$</p>
+<h1 id="integration">Integration</h1>
+<p>We define integration as</p>
+<p>$$</p>
+<p><em>{0}^{N} f(x) , dx = </em>{{x }} _{i=0}^{N/x} f(i x) x</p>
+<p>$$</p>
+<p>So from here</p>
+<h3 id="int-1-dx-x-c"><span class="math inline">\(\int 1 \, dx = x +
+C\)</span></h3>
+<p>$$ <span class="math display">\[\begin{align*}
+
+\int_{0}^{N} f(x) \, dx &amp;=  \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta
+x) \cdot \Delta x \\ \\
+
+f(x) &amp;= 1 \\
+
+\int_{0}^{x} 1 \, dx &amp;=\sum_{i=0}^{x/\Delta x} 1 \cdot \Delta x \\
+                      &amp;= (x/\Delta x ) \Delta x  \\
+                      &amp;= x
+
+\end{align*}\]</span> $$</p>
+<h3 id="int-x-dx-frac12x2-c"><span class="math inline">\(\int x \, dx =
+\frac{1}{2}x^2 + C\)</span></h3>
+<p>$$ <span class="math display">\[\begin{align*}
+\int_{0}^{N} f(x) \, dx &amp;= \lim_{{\Delta x \to 0}}
+\sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x  \\
+
+
+
+
+\int_{0}^{x} x \, dx &amp;= \lim_{{\Delta x \to 0}} \sum_{i=0}^{x/\Delta
+x} (i \cdot \Delta x) \cdot \Delta x \\
+
+      &amp;= \sum_{i=0}^{x/\Delta x} (i ) \cdot \Delta x^2  \\
+
+      &amp;= [\frac{x^2}{2 \cdot \Delta x^2} +  \frac{x}{2 \cdot \Delta
+x}] \cdot  \Delta x^2
+
+
+
+\end{align*}\]</span></p>
+<p>$$</p>
+<h3 id="int-x2-dx-frac13x3-c"><span class="math inline">\(\int x^2 \, dx
+= \frac{1}{3}x^3 + C\)</span></h3>
+<p>$$ <span class="math display">\[\begin{align*}
+\int_{0}^{N} f(x) \, dx &amp;= \lim_{{\Delta x \to 0}}
+\sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x
+
+\end{align*}\]</span> $$</p>
+<p>$$ <em>{0}^{N} x^2 , dx = </em>{{x }} _{i=0}^{N/x} (i x)^2 xn \ \</p>
+<p>_{i=0}^{x/x} i^2 x^3 = x^3 = $$</p>
+<h3 id="int-cosx-dx-sinx-c"><span class="math inline">\(\int \cos(x) \,
+dx = \sin(x) + C\)</span></h3>
+<p>I have no clue</p>
+<p>We want to show that:</p>
+<p><span class="math inline">\(\int_{0}^{N} f(x) \, dx = F(N) -
+F(0)\)</span></p>
+<p>Now, using the provided formula:</p>
+<p><span class="math inline">\(\int_{0}^{N} f(x) \, dx = \lim_{{\Delta x
+\to 0}} \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta
+x\)</span></p>
+<p>Let’s rewrite the right-hand side of the equation:</p>
+<p><span class="math inline">\(\lim_{{\Delta x \to 0}}
+\sum_{i=0}^{N/\Delta x} F&#39;(i \cdot \Delta x) \cdot \Delta
+x\)</span></p>
+<p>Now, we’ll use the definition of the derivative to rewrite <span
+class="math inline">\(F&#39;(i \cdot \Delta x)\)</span>:</p>
+<p><span class="math inline">\(F&#39;(i \cdot \Delta x) = \frac{F(i
+\cdot \Delta x + \Delta x) - F(i \cdot \Delta x)}{\Delta x}\)</span></p>
+<p>Substitute this back into the equation:</p>
+<p><span class="math inline">\(\lim_{{\Delta x \to 0}}
+\sum_{i=0}^{N/\Delta x} \frac{F(i \cdot \Delta x + \Delta x) - F(i \cdot
+\Delta x)}{\Delta x} \cdot \Delta x\)</span></p>
+<p>Now, notice that <span class="math inline">\(\Delta x\)</span>
+cancels out in each term of the sum:</p>
+<p><span class="math inline">\(\lim_{{\Delta x \to 0}}
+\sum_{i=0}^{N/\Delta x} F(i \cdot \Delta x + \Delta x) - F(i \cdot
+\Delta x)\)</span></p>
+<p>We can now rewrite this as a telescoping sum:</p>
+<p><span class="math inline">\(\lim_{{\Delta x \to 0}} \left[F(\Delta x)
+- F(0) + F(2\Delta x) - F(\Delta x) + \ldots + F(N) - F(N - \Delta
+x)\right]\)</span></p>
+<p>Now, many terms will cancel out:</p>
+<p><span class="math inline">\(\lim_{{\Delta x \to 0}} \left[F(N) -
+F(0)\right]\)</span></p>
+<p>As <span class="math inline">\(\Delta x\)</span> approaches 0, the
+sum becomes:</p>
+<p><span class="math inline">\(F(N) - F(0)\)</span></p>
+<p>Therefore, we have proved that:</p>
+<p><span class="math inline">\(\int_{0}^{N} f(x) \, dx = F(N) -
+F(0)\)</span></p>
+<p>This completes the proof of the Fundamental Theorem of Calculus.</p>
 </body>
 </html>

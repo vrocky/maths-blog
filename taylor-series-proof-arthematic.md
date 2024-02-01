@@ -558,9 +558,9 @@ I understand you'd like an infinite series representation for the function $\fra
 
 ## Some Infinite series formulas
 
- $\frac{1}{x+1} = \sum_{n=0}^{\infty} (-1)^n x^n$ , For $|x| < 1$,  series converges
+### $\frac{1}{x+1} = \sum_{n=0}^{\infty} (-1)^n x^n$ , For $|x| < 1$,  series converges
 
- $\frac{1}{x+1} = \sum_{n=0}^{\infty} (-1)^n \frac{1}{x}^n$ , For $|x| > 1$,  series converges
+### $\frac{1}{x+1} = \sum_{n=0}^{\infty} (-1)^n \frac{1}{x}^n$ , For $|x| > 1$,  series converges
 
 
 ### Proof:
@@ -589,17 +589,11 @@ where $a$ is the first term and $r$ is the common ratio.
 - For the Laurent series, $a = x^{-1}$ and $r = -x^{-1}$, so the sum is $\frac{x^{-1}}{1 - (-x^{-1})} = \frac{1}{x + 1} = (1 + x)^{-1}$, which is valid for $|x| > 1$.
 
 
-<br>
-
-<br>
 
 
-<br>
+### $\frac{1}{ax+by}= \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n$ , For $|\frac{x}{y}| < 1$,  series converges
 
-
- $\frac{1}{ax+by}= \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n$ , For $|\frac{x}{y}| < 1$,  series converges
-
- $\frac{1}{ax+by}= \frac{1}{bx} \sum_{n=0}^{\infty} (-1)^n \left(\frac{by}{ax}\right)^n$ , For $|\frac{y}{x}| < 1$,  series converges
+### $\frac{1}{ax+by}= \frac{1}{bx} \sum_{n=0}^{\infty} (-1)^n \left(\frac{by}{ax}\right)^n$ , For $|\frac{y}{x}| < 1$,  series converges
 
 
 
@@ -807,6 +801,131 @@ $$
 \end{align*}
 
 $$
+
+
+# Integration
+
+We define integration as 
+
+$$
+
+\int_{0}^{N} f(x) \, dx = \lim_{{\Delta x \to 0}} \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x
+
+$$
+
+So from here
+
+### $\int 1 \, dx = x + C$
+$$
+\begin{align*}
+
+\int_{0}^{N} f(x) \, dx &=  \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x \\ \\
+
+f(x) &= 1 \\
+
+\int_{0}^{x} 1 \, dx &=\sum_{i=0}^{x/\Delta x} 1 \cdot \Delta x \\
+                      &= (x/\Delta x ) \Delta x  \\
+                      &= x
+
+\end{align*}
+$$
+
+
+### $\int x \, dx = \frac{1}{2}x^2 + C$
+$$
+\begin{align*}
+\int_{0}^{N} f(x) \, dx &= \lim_{{\Delta x \to 0}} \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x  \\
+
+
+
+
+\int_{0}^{x} x \, dx &= \lim_{{\Delta x \to 0}} \sum_{i=0}^{x/\Delta x} (i \cdot \Delta x) \cdot \Delta x \\
+
+      &= \sum_{i=0}^{x/\Delta x} (i ) \cdot \Delta x^2  \\
+
+      &= [\frac{x^2}{2 \cdot \Delta x^2} +  \frac{x}{2 \cdot \Delta x}] \cdot  \Delta x^2
+
+
+
+\end{align*}
+
+$$
+
+
+
+
+
+### $\int x^2 \, dx = \frac{1}{3}x^3 + C$
+
+
+
+$$
+\begin{align*}
+\int_{0}^{N} f(x) \, dx &= \lim_{{\Delta x \to 0}} \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x
+
+\end{align*}
+$$
+
+
+$$
+\int_{0}^{N} x^2 \, dx = \lim_{{\Delta x \to 0}} \sum_{i=0}^{N/\Delta x} (i \cdot \Delta x)^2 \cdot \Delta xn \\ \\
+
+\sum_{i=0}^{x/\Delta x} i^2 \cdot \Delta x^3 = \Delta x^3 \cdot \frac{\frac{x}{\Delta x}(\frac{x}{\Delta x} + 1)(2\frac{x}{\Delta x} + 1)}{6} =\frac{x^3}{3}
+$$
+
+
+
+### $\int \cos(x) \, dx = \sin(x) + C$
+
+I have no clue
+
+
+We want to show that:
+
+$\int_{0}^{N} f(x) \, dx = F(N) - F(0)$
+
+Now, using the provided formula:
+
+$\int_{0}^{N} f(x) \, dx = \lim_{{\Delta x \to 0}} \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x$
+
+Let's rewrite the right-hand side of the equation:
+
+$\lim_{{\Delta x \to 0}} \sum_{i=0}^{N/\Delta x} F'(i \cdot \Delta x) \cdot \Delta x$
+
+Now, we'll use the definition of the derivative to rewrite $F'(i \cdot \Delta x)$:
+
+$F'(i \cdot \Delta x) = \frac{F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)}{\Delta x}$
+
+Substitute this back into the equation:
+
+$\lim_{{\Delta x \to 0}} \sum_{i=0}^{N/\Delta x} \frac{F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)}{\Delta x} \cdot \Delta x$
+
+Now, notice that $\Delta x$ cancels out in each term of the sum:
+
+$\lim_{{\Delta x \to 0}} \sum_{i=0}^{N/\Delta x} F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)$
+
+We can now rewrite this as a telescoping sum:
+
+$\lim_{{\Delta x \to 0}} \left[F(\Delta x) - F(0) + F(2\Delta x) - F(\Delta x) + \ldots + F(N) - F(N - \Delta x)\right]$
+
+Now, many terms will cancel out:
+
+$\lim_{{\Delta x \to 0}} \left[F(N) - F(0)\right]$
+
+As $\Delta x$ approaches 0, the sum becomes:
+
+$F(N) - F(0)$
+
+Therefore, we have proved that:
+
+$\int_{0}^{N} f(x) \, dx = F(N) - F(0)$
+
+This completes the proof of the Fundamental Theorem of Calculus.
+
+
+
+
+
 
 
 
