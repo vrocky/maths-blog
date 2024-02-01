@@ -538,8 +538,8 @@ x)^5 + (\Delta x)^6\)</span></p></li>
 \cos(x)\cos(\Delta x) - \sin(x)\sin(\Delta x) \approx \cos(x) - \sin(x)
 \Delta x\)</span></p></li>
 <li><p><span class="math inline">\(\sin(x + \Delta x) =
-\sin(x)\cos(\Delta x) + \cos(x)\sin(\Delta x)  \approx
-\sin(x)\cos(\Delta x) + \cos(x)\Delta x\)</span></p></li>
+\sin(x)\cos(\Delta x) + \cos(x)\sin(\Delta x)  \approx \sin(x) +
+\cos(x)\Delta x\)</span></p></li>
 </ol>
 <p><br></p>
 <h2 id="multiplication-rule-for-differentiation">Multiplication rule for
@@ -561,7 +561,11 @@ f(x + h) g(x + h) = A_0 \,B_0 +\mathrm{h}\,{
 +A_4 \,B_0 \right)}+  \ldots
 \]</span> The coefficient of <span class="math inline">\(dx\)</span> in
 the above equation serves as a clear manifestation of the chain rule’s
-role in differentiation.</p>
+role in differentiation. The matrix representation of coefficients
+provides a convenient way to visualize this process in real-time, akin
+to how Cantor’s diagonal argument is employed to demonstrate the
+uncountability of sets, especially when dealing with infinite
+matrices.</p>
 <h2 id="chain-rule-for-differentiation">Chain rule for
 differentiation</h2>
 <p>Lets try to proof chain rule for differentiation</p>
@@ -646,8 +650,8 @@ g&#39;(x)\)</span></p>
 <h3 id="excercise">Excercise</h3>
 <p><span class="math inline">\(\frac{d}{dx}\cos(x^2)\)</span></p>
 <p>here ,</p>
-<p><span class="math inline">\(f(x)= \cos(x)\)</span> and $g(x) = x^2
-$</p>
+<p><span class="math inline">\(f(x)= \cos(x)\)</span> and <span
+class="math inline">\(g(x) = x^2\)</span></p>
 <p>Now, <span class="math inline">\(g(x+h) = (x^2 + 2 x h
 +  h^2)\)</span></p>
 <p>here we can see <span class="math inline">\(f(g(x+h))\)</span> is not
@@ -787,5 +791,222 @@ us <span class="math inline">\(\frac{d}{dx}\frac{1}{x}\)</span> = <span
 class="math inline">\(\frac{1}{-x^2}\)</span> or <span
 class="math inline">\(\frac{d}{dx}{x^{-1}}\)</span> = <span
 class="math inline">\(-x^{-2}\)</span>.</p>
+<p>I understand you’d like an infinite series representation for the
+function <span class="math inline">\(\frac{1}{ax+by}\)</span> without
+using Taylor series. You can try to express it as a power series in
+terms of <span class="math inline">\(x\)</span> and <span
+class="math inline">\(y\)</span> directly. However, keep in mind that
+not all functions can be easily expressed as simple power series without
+Taylor series expansion.</p>
+<h2 id="some-infinite-series-formulas">Some Infinite series
+formulas</h2>
+<p><span class="math inline">\(\frac{1}{x+1} = \sum_{n=0}^{\infty}
+(-1)^n x^n\)</span> , For <span class="math inline">\(|x| &lt;
+1\)</span>, series converges</p>
+<p><span class="math inline">\(\frac{1}{x+1} = \sum_{n=0}^{\infty}
+(-1)^n \frac{1}{x}^n\)</span> , For <span class="math inline">\(|x| &gt;
+1\)</span>, series converges</p>
+<h3 id="proof-1">Proof:</h3>
+<p>We can proof the both with our long division that we take as
+elementary proof,</p>
+<p>but lets me give you traditional words on it for the reference :</p>
+<p>derive the summation formulas for both series expansions of <span
+class="math inline">\((1 + x)^{-1}\)</span>.</p>
+<ol type="1">
+<li><p>Binomial Series Expansion: The summation formula when <span
+class="math inline">\(|x| &lt; 1\)</span> is a geometric series. The
+general term of the series is given by <span
+class="math inline">\((-1)^n x^n\)</span>. The summation formula is:
+<span class="math inline">\(\sum_{n=0}^{\infty} (-1)^n x^n = 1 - x + x^2
+- x^3 + x^4 - \ldots\)</span> For <span class="math inline">\(|x| &lt;
+1\)</span>, this series converges to <span class="math inline">\((1 +
+x)^{-1}\)</span>.</p></li>
+<li><p>Laurent Series Expansion: The summation formula for the case when
+<span class="math inline">\(|x| &gt; 1\)</span> also follows a geometric
+progression but with terms involving negative powers of <span
+class="math inline">\(x\)</span>. The general term is <span
+class="math inline">\((-1)^{n+1} x^{-n}\)</span>. The summation formula
+is: <span class="math inline">\(\sum_{n=1}^{\infty} (-1)^{n+1} x^{-n} =
+x^{-1} - x^{-2} + x^{-3} - \ldots\)</span> This series converges to
+<span class="math inline">\((1 + x)^{-1}\)</span> for <span
+class="math inline">\(|x| &gt; 1\)</span>.</p></li>
+</ol>
+<p>Both of these are examples of infinite geometric series, where the
+sum of the series can be expressed as: <span
+class="math inline">\(\text{Sum} = \frac{a}{1 - r}\)</span> where <span
+class="math inline">\(a\)</span> is the first term and <span
+class="math inline">\(r\)</span> is the common ratio.</p>
+<ul>
+<li>For the binomial series, <span class="math inline">\(a = 1\)</span>
+and <span class="math inline">\(r = -x\)</span>, so the sum is <span
+class="math inline">\(\frac{1}{1 - (-x)} = \frac{1}{1 +
+x}\)</span>.</li>
+<li>For the Laurent series, <span class="math inline">\(a =
+x^{-1}\)</span> and <span class="math inline">\(r = -x^{-1}\)</span>, so
+the sum is <span class="math inline">\(\frac{x^{-1}}{1 - (-x^{-1})} =
+\frac{1}{x + 1} = (1 + x)^{-1}\)</span>, which is valid for <span
+class="math inline">\(|x| &gt; 1\)</span>.</li>
+</ul>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><span class="math inline">\(\frac{1}{ax+by}= \frac{1}{by}
+\sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n\)</span> , For
+<span class="math inline">\(|\frac{x}{y}| &lt; 1\)</span>, series
+converges</p>
+<p><span class="math inline">\(\frac{1}{ax+by}= \frac{1}{bx}
+\sum_{n=0}^{\infty} (-1)^n \left(\frac{by}{ax}\right)^n\)</span> , For
+<span class="math inline">\(|\frac{y}{x}| &lt; 1\)</span>, series
+converges</p>
+<h3 id="proof-2">Proof:</h3>
+<p>$$ <span class="math display">\[\begin{align*}
+  \frac{1}{k+1} &amp;= \sum_{n=0}^{\infty} (-1)^n k^n \\
+
+  \frac{1}{ax+by} &amp;= \frac{1}{by} \cdot \frac{1}{k+1} \\
+  &amp; = \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n k^n  \\
+
+  &amp; = \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n
+\left(\frac{ax}{by}\right)^n\\
+
+
+
+\end{align*}\]</span> $$</p>
+<h2 id="properties-with-division-involved">Properties with division
+involved</h2>
+<h3 id="fracddxsecx-secx-tanx"><span
+class="math inline">\(\frac{d}{dx}[\sec(x)] = \sec(x)
+\tan(x)\)</span></h3>
+<h3 id="proof-3">Proof:</h3>
+<p>$$ <span class="math display">\[\begin{align*}
+\sec(x + h) &amp;= \frac{1}{\cos(x + h)} \\
+
+\because \cos(x + h) &amp;= \cos(x)\cos(h) - \sin(x)\sin(h) \\
+
+\sec(x + h) &amp;= \frac{1}{\cos(x)\cos(h) - \sin(x)\sin(h)} \\
+
+\sec(x + h)  &amp;= \frac{1}{ \cos(x) - \sin(x) h}    \\
+
+\end{align*}\]</span> $$</p>
+<p>Now we can expand this infinite series and get the cofficient of
+<span class="math inline">\(h\)</span>,</p>
+<p>or</p>
+<p>We can directly say this series is having ratio <span
+class="math inline">\((-\sin(x)h)/\cos(x)\)</span> so the term
+containing <span class="math inline">\(h\)</span> will be <span
+class="math inline">\((-\sin(x)h)/\cos^2(x)\)</span> and sign <span
+class="math inline">\((-1)^1\)</span></p>
+<p>which gives us the requried formula</p>
+<p>Lets do the same again with chain rule where</p>
+<p><span class="math display">\[\begin{align*}
+  f(x) &amp;=  \frac{1}{x} \\
+  g(x) &amp;= \cos(x)
+\end{align*}\]</span></p>
+<p>we need to find <span class="math inline">\(f(g(x + h))\)</span></p>
+<p>$$ <span class="math display">\[\begin{align*}
+\sec(x + h) &amp;= \frac{1}{\cos(x + h)} \\
+
+\because \cos(x + h) &amp;= \cos(x)\cos(h) - \sin(x)\sin(h) \\
+
+\sec(x + h) &amp;= \frac{1}{\cos(x)\cos(h) - \sin(x)\sin(h)} \\
+
+\sec(x + h)  &amp;= \frac{1}{ \cos(x) - \sin(x) h}    \\
+
+\end{align*}\]</span> $$</p>
+<p>you can easily visualize that expanding first function has given us
+<span class="math inline">\(g&#39;(x)\)</span> then <span
+class="math inline">\(f&#39;(g(x))\)</span> we can remember this as for
+composite function <span class="math inline">\(h\)</span> is replaced by
+<span class="math inline">\(g&#39;(x) h\)</span></p>
+<p>So we our expansion strategy is very much working same mentally
+also</p>
+<h3 id="fracddxcscx--cscx-cotx"><span
+class="math inline">\(\frac{d}{dx}[\csc(x)] = -\csc(x)
+\cot(x)\)</span></h3>
+<h3 id="proof-4">Proof:</h3>
+<p>$$ <span class="math display">\[\begin{align*}
+\csc(x + h) &amp;= \frac{1}{\sin(x + h)}  \\
+
+\because \sin(x + h) &amp;= \sin(x)\cos(h) + \cos(x)\sin(h) \\
+\csc(x + h) &amp;= \frac{1}{\sin(x)\cos(h) + \cos(x)\sin(h)} \\
+&amp;= \frac{1}{\sin(x) + \cos(x)h}
+\end{align*}\]</span> $$</p>
+<p>We can directly say this series is having ratio <span
+class="math inline">\((\cos(x)h)/\sin(x)\)</span> so the term containing
+<span class="math inline">\(h\)</span> will be <span
+class="math inline">\((\cos(x)h)/\sin^2(x)\)</span> and sign <span
+class="math inline">\((-1)^2\)</span></p>
+<p>this gives us the requried formula</p>
+<h3 id="fracddxtanx-sec2x"><span
+class="math inline">\(\frac{d}{dx}(\tan(x)) = \sec^2(x)\)</span></h3>
+<h3 id="proof-5">Proof:</h3>
+<p>$$ <span class="math display">\[\begin{align*}
+\tan(x+h)  &amp;= \frac{\sin(x+h)}{\cos(x+h)} \\
+\because \sin(x + \Delta x) &amp;= \sin(x)\cos(\Delta x) +
+\cos(x)\sin(\Delta x)  \approx \sin(x) + \cos(x)\Delta x\\
+\because \cos(x + \Delta x) &amp;= \cos(x)\cos(\Delta x) -
+\sin(x)\sin(\Delta x) \approx \cos(x) - \sin(x) \Delta x \\
+
+\tan(x+h)  &amp;=\frac{sin(x) + \cos(x)h}{\cos(x) - \sin(x) h } \\
+\tan(x+h)  &amp;= [sin(x) + \cos(x)h] * [\frac{1}{\cos(x) - \sin(x) h }]
+\\
+
+           
+\end{align*}\]</span></p>
+<p>$$</p>
+<p>We need to find the cofficient of <span
+class="math inline">\(h\)</span> in expansion of above term</p>
+<p>For <span class="math inline">\(\frac{1}{\cos(x) - \sin(x) h
+}\)</span> We can directly say this series is having ratio <span
+class="math inline">\((\sin(x)h)/\cos(x)\)</span></p>
+<p>Let, term with of <span class="math inline">\(h^0\)</span> , <span
+class="math inline">\(C_0\)</span> and term with <span
+class="math inline">\(h^1\)</span> be <span
+class="math inline">\(C_1\)</span></p>
+<p>$$ <span class="math display">\[\begin{align*}
+C_0 &amp;=  \frac{1}{\cos(x)} \\
+C_1 &amp;=  \frac{\sin(x)h}{\cos^2(x)}
+\end{align*}\]</span></p>
+<p>$$</p>
+<p>Now we can directly say that</p>
+<p>$$ <span class="math display">\[\begin{align*}
+
+\tan(x+h)  &amp;= [sin(x) + \cos(x)h] * [\frac{1}{\cos(x) - \sin(x) h }]
+\\
+           &amp;=  [sin(x) + \cos(x)h] *[C_0 + C_1 x + \ldots]
+
+
+           
+\end{align*}\]</span></p>
+<p>$$</p>
+<p>We can analyse that terms of cofficient of <span
+class="math inline">\(h\)</span> are $C_0 (x) + C_1(x) $</p>
+<p>$$ <span class="math display">\[\begin{align*}
+
+C_0 \cos(x) + C_1\sin(x) &amp;= 1 + \tan^2(x) \\
+                          &amp;= \sec^2(x)
+
+\end{align*}\]</span> $$</p>
+<h2 id="fracddxlogx-frac1x"><span
+class="math inline">\(\frac{d}{dx}(\log(x)) = \frac{1}{x}\)</span></h2>
+<h3 id="proof-6">Proof:</h3>
+<p>Lets expand <span class="math inline">\(\log(x+h)\)</span> in terms
+of power of <span class="math inline">\(h\)</span></p>
+<p><span class="math display">\[
+\begin{align*}
+\log(x + h) &amp;= \log(x(1 + \frac{h}{x}))\\
+&amp;= \log(x) + \log(1 + \frac{h}{x}) \\
+&amp;= \log(x) + \log(1 + \frac{h}{x})
+\end{align*}
+\]</span></p>
+<p>$$</p>
+<p><span class="math display">\[\begin{align*}
+
+
+\log(x + h) &amp;= \log(x) +
+\log(((1+\frac{h}{x})^\frac{x}{h})^\frac{h}{x} ) \\
+            &amp; = \log(x) + \log((e)^\frac{h}{x} ) \\
+            &amp;= \log(x) + \frac{h}{x}
+\end{align*}\]</span></p>
+<p>$$</p>
 </body>
 </html>

@@ -291,7 +291,7 @@ We can easily see $A_1$ cofficient and find derivative of and instead of remembe
 
 7. $\cos(x + \Delta x) = \cos(x)\cos(\Delta x) - \sin(x)\sin(\Delta x) \approx \cos(x) - \sin(x) \Delta x$
 
-8. $\sin(x + \Delta x) = \sin(x)\cos(\Delta x) + \cos(x)\sin(\Delta x)  \approx \sin(x)\cos(\Delta x) + \cos(x)\Delta x$
+8. $\sin(x + \Delta x) = \sin(x)\cos(\Delta x) + \cos(x)\sin(\Delta x)  \approx \sin(x) + \cos(x)\Delta x$
 
 
 <br>
@@ -317,6 +317,7 @@ f(x + h) g(x + h) = A_0 \,B_0 +\mathrm{h}\,{
   +{\mathrm{h}}^4 \,{\left(A_0 \,B_4 +A_1 \,B_3 +A_2 \,B_2 +A_3 \,B_1 +A_4 \,B_0 \right)}+  \ldots
 $$
 The coefficient of $dx$ in the above equation serves as a clear manifestation of the chain rule's role in differentiation.
+The matrix representation of coefficients provides a convenient way to visualize this process in real-time, akin to how Cantor's diagonal argument is employed to demonstrate the uncountability of sets, especially when dealing with infinite matrices.
 
 
 ## Chain rule for differentiation 
@@ -549,6 +550,263 @@ In this tutorial, we have learned how to derive the series expansion for $\frac{
 This is the series expansion for $\frac{1}{x + h}$.
 
 and clearly cofficient of $h$ gets us $\frac{d}{dx}\frac{1}{x}$  =  $\frac{1}{-x^2}$ or $\frac{d}{dx}{x^{-1}}$  = $-x^{-2}$.
+
+
+
+
+I understand you'd like an infinite series representation for the function $\frac{1}{ax+by}$ without using Taylor series. You can try to express it as a power series in terms of $x$ and $y$ directly. However, keep in mind that not all functions can be easily expressed as simple power series without Taylor series expansion.
+
+## Some Infinite series formulas
+
+ $\frac{1}{x+1} = \sum_{n=0}^{\infty} (-1)^n x^n$ , For $|x| < 1$,  series converges
+
+ $\frac{1}{x+1} = \sum_{n=0}^{\infty} (-1)^n \frac{1}{x}^n$ , For $|x| > 1$,  series converges
+
+
+### Proof:
+We can proof the both with our long division that we take as elementary proof, 
+
+but lets me give you traditional words on it for the reference :
+
+derive the summation formulas for both series expansions of $(1 + x)^{-1}$.
+
+1. Binomial Series Expansion: The summation formula when $|x| < 1$ is a geometric series. The general term of the series is given by $(-1)^n x^n$. The summation formula is:
+$\sum_{n=0}^{\infty} (-1)^n x^n = 1 - x + x^2 - x^3 + x^4 - \ldots$
+For $|x| < 1$, this series converges to $(1 + x)^{-1}$.
+
+
+2. Laurent Series Expansion: The summation formula for the case when $|x| > 1$ also follows a geometric progression but with terms involving negative powers of $x$. The general term is $(-1)^{n+1} x^{-n}$. The summation formula is:
+$\sum_{n=1}^{\infty} (-1)^{n+1} x^{-n} = x^{-1} - x^{-2} + x^{-3} - \ldots$
+This series converges to $(1 + x)^{-1}$ for $|x| > 1$.
+
+
+
+Both of these are examples of infinite geometric series, where the sum of the series can be expressed as:
+$\text{Sum} = \frac{a}{1 - r}$
+where $a$ is the first term and $r$ is the common ratio.
+
+- For the binomial series, $a = 1$ and $r = -x$, so the sum is $\frac{1}{1 - (-x)} = \frac{1}{1 + x}$.
+- For the Laurent series, $a = x^{-1}$ and $r = -x^{-1}$, so the sum is $\frac{x^{-1}}{1 - (-x^{-1})} = \frac{1}{x + 1} = (1 + x)^{-1}$, which is valid for $|x| > 1$.
+
+
+<br>
+
+<br>
+
+
+<br>
+
+
+ $\frac{1}{ax+by}= \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n$ , For $|\frac{x}{y}| < 1$,  series converges
+
+ $\frac{1}{ax+by}= \frac{1}{bx} \sum_{n=0}^{\infty} (-1)^n \left(\frac{by}{ax}\right)^n$ , For $|\frac{y}{x}| < 1$,  series converges
+
+
+
+
+
+### Proof:
+$$
+\begin{align*}
+  \frac{1}{k+1} &= \sum_{n=0}^{\infty} (-1)^n k^n \\
+
+  \frac{1}{ax+by} &= \frac{1}{by} \cdot \frac{1}{k+1} \\
+  & = \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n k^n  \\
+
+  & = \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n\\
+
+
+
+\end{align*}
+$$
+
+
+## Properties with division involved
+
+
+
+
+
+### $\frac{d}{dx}[\sec(x)] = \sec(x) \tan(x)$
+
+### Proof:
+
+
+$$
+\begin{align*}
+\sec(x + h) &= \frac{1}{\cos(x + h)} \\
+
+\because \cos(x + h) &= \cos(x)\cos(h) - \sin(x)\sin(h) \\
+
+\sec(x + h) &= \frac{1}{\cos(x)\cos(h) - \sin(x)\sin(h)} \\
+
+ \sec(x + h)  &= \frac{1}{ \cos(x) - \sin(x) h}    \\
+
+\end{align*}
+$$
+
+Now we can expand this infinite series and get the cofficient of $h$,
+
+or
+
+We can directly say this series is having ratio $(-\sin(x)h)/\cos(x)$  so the term containing $h$ will be $(-\sin(x)h)/\cos^2(x)$ and sign $(-1)^1$
+
+which gives us the requried formula
+
+
+Lets do the same again with chain rule where
+
+
+$$\begin{align*}
+  f(x) &=  \frac{1}{x} \\
+  g(x) &= \cos(x)
+\end{align*}$$
+
+we need to find $f(g(x + h))$
+
+
+$$
+\begin{align*}
+\sec(x + h) &= \frac{1}{\cos(x + h)} \\
+
+\because \cos(x + h) &= \cos(x)\cos(h) - \sin(x)\sin(h) \\
+
+\sec(x + h) &= \frac{1}{\cos(x)\cos(h) - \sin(x)\sin(h)} \\
+
+ \sec(x + h)  &= \frac{1}{ \cos(x) - \sin(x) h}    \\
+
+\end{align*}
+$$
+
+you can easily visualize that expanding first function has given us  $g'(x)$ then $f'(g(x))$ we can remember this as for composite function $h$ is replaced by $g'(x) h$
+
+So we our expansion strategy is very much working same mentally also
+
+
+
+### $\frac{d}{dx}[\csc(x)] = -\csc(x) \cot(x)$
+
+### Proof:
+
+
+
+$$
+\begin{align*}
+\csc(x + h) &= \frac{1}{\sin(x + h)}  \\
+
+\because \sin(x + h) &= \sin(x)\cos(h) + \cos(x)\sin(h) \\
+\csc(x + h) &= \frac{1}{\sin(x)\cos(h) + \cos(x)\sin(h)} \\
+ &= \frac{1}{\sin(x) + \cos(x)h}
+\end{align*}
+$$
+
+We can directly say this series is having ratio $(\cos(x)h)/\sin(x)$  so the term containing $h$ will be $(\cos(x)h)/\sin^2(x)$ and sign $(-1)^2$
+
+this gives us the requried formula 
+
+
+
+
+### $\frac{d}{dx}(\tan(x)) = \sec^2(x)$
+
+### Proof:
+
+
+$$
+\begin{align*}
+\tan(x+h)  &= \frac{\sin(x+h)}{\cos(x+h)} \\
+\because \sin(x + \Delta x) &= \sin(x)\cos(\Delta x) + \cos(x)\sin(\Delta x)  \approx \sin(x) + \cos(x)\Delta x\\
+\because \cos(x + \Delta x) &= \cos(x)\cos(\Delta x) - \sin(x)\sin(\Delta x) \approx \cos(x) - \sin(x) \Delta x \\
+
+\tan(x+h)  &=\frac{sin(x) + \cos(x)h}{\cos(x) - \sin(x) h } \\
+\tan(x+h)  &= [sin(x) + \cos(x)h] * [\frac{1}{\cos(x) - \sin(x) h }] \\
+
+           
+\end{align*}
+
+$$
+
+We need to find the cofficient of $h$ in expansion of above term
+
+For $\frac{1}{\cos(x) - \sin(x) h }$ We can directly say this series is having ratio $(\sin(x)h)/\cos(x)$ 
+
+
+ 
+ Let, term with  of $h^0$ , $C_0$ and   term with $h^1$ be $C_1$
+  
+   $$
+\begin{align*}
+ C_0 &=  \frac{1}{\cos(x)} \\
+ C_1 &=  \frac{\sin(x)h}{\cos^2(x)}
+ 
+\end{align*}
+
+$$
+   
+
+
+
+  Now we can directly say that 
+
+
+
+
+$$
+\begin{align*}
+
+\tan(x+h)  &= [sin(x) + \cos(x)h] * [\frac{1}{\cos(x) - \sin(x) h }] \\
+           &=  [sin(x) + \cos(x)h] *[C_0 + C_1 x + \ldots]
+
+
+           
+\end{align*}
+
+$$
+
+We can analyse that terms of cofficient of $h$ are $C_0 \cos(x) + C_1\sin(x) $
+
+
+
+
+$$
+\begin{align*}
+
+C_0 \cos(x) + C_1\sin(x) &= 1 + \tan^2(x) \\
+                          &= \sec^2(x)
+
+ 
+\end{align*}
+$$
+
+## $\frac{d}{dx}(\log(x)) = \frac{1}{x}$
+
+
+### Proof: 
+
+Lets expand $\log(x+h)$ in terms of power of $h$
+
+$$
+\begin{align*}
+\log(x + h) &= \log(x(1 + \frac{h}{x}))\\
+ &= \log(x) + \log(1 + \frac{h}{x}) \\
+ &= \log(x) + \log(1 + \frac{h}{x})
+\end{align*}
+$$
+
+
+
+$$
+
+\begin{align*}
+
+
+\log(x + h) &= \log(x) + \log(((1+\frac{h}{x})^\frac{x}{h})^\frac{h}{x} ) \\
+            & = \log(x) + \log((e)^\frac{h}{x} ) \\
+            &= \log(x) + \frac{h}{x}
+ 
+\end{align*}
+
+$$
 
 
 
