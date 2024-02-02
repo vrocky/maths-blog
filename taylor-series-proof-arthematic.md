@@ -912,7 +912,7 @@ $$
 \end{align*}
 $$
 
-Ops, i found these forumas on https://en.wikipedia.org/wiki/Faulhaber's_formula
+Ops, i found these formulas on <a link="https://en.wikipedia.org/wiki/Faulhaber's_formula">https://en.wikipedia.org/wiki/Faulhaber's_formula</a>
 
 $$
 
@@ -987,6 +987,52 @@ Therefore, we have proved that:
 $\int_{0}^{N} f(x) \, dx = F(N) - F(0)$
 
 This completes the proof of the Fundamental Theorem of Calculus.
+
+
+$$
+
+
+$$
+
+## Alternative Proof
+
+Consider,
+$$
+\begin{aligned}
+
+f(x +  \Delta x) - f(x)  &=    
+
+                                        f_{A_1} (\Delta x) +f_{A_3} (\Delta x)^2 + f_{A_4} (\Delta x)^3 + \ldots   \\
+f(x +  2 \Delta x) - f(x + \Delta x) &= 
+
+                                        f_{A_1} (2 \cdot \Delta x) +f_{A_3} (2 \cdot \Delta x)^2 + f_{A_4} (2 \cdot \Delta x)^3 + \ldots  \\
+f(x +  3 \Delta x) - f(x + 2 \Delta x)  &= 
+
+                                          f_{A_1} (3 \cdot \Delta x) +f_{A_3} (3 \cdot \Delta x)^2 + f_{A_4} (3 \cdot \Delta x)^3 + \ldots \\
+f(x +  4 \Delta x) - f(x + 3 \Delta x)  &=
+
+                                             f_{A_1} (4 \cdot\ \Delta x) +f_{A_3} (4 \cdot\ \Delta x)^2 + f_{A_4} (4 \cdot\  \Delta x)^3 + \ldots \\
+f(x +  5 \Delta x) - f(x + 4 \Delta x)  &= 
+                                              f_{A_1} (5 \cdot\ \Delta x) +f_{A_3} (5 \cdot\  \Delta x)^2 + f_{A_4} (5 \cdot\  \Delta x)^3 + \ldots \\
+
+
+                              &\vdots  \\
+
+f(x + N \cdot \Delta x) - f(x + [N -1 ] \cdot \Delta x )  &= 
+                              f_{A_1}(x + [N -1 ] \cdot \Delta x )  (\Delta x) 
+                              + f_{A_1}(x + [N -1 ] \cdot \Delta x )  (\Delta x)^2 
+                              + f_{A_1}(x + [N -1 ] \cdot \Delta x ) (\Delta x)^3 
+                              + \ldots  \\
+
+
+
+
+\end{aligned}
+$$
+
+Now if we will take sum of vertically we can get the desired proof
+
+
 
 # Difference equations for Anti Derivative
 
