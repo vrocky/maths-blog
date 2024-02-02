@@ -807,11 +807,15 @@ $$
 
 We define integration as 
 
-$$
-
-\int_{0}^{N} f(x) \, dx = \lim_{{\Delta x \to 0}} \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x
+Let $N = n/\Delta x$
 
 $$
+
+\int_{0}^{N} f(x) \, dx = \lim_{{\Delta x \to 0}} \sum_{i=0}^{n/\Delta x} f(i \cdot \Delta x) \cdot \Delta x
+$$
+
+
+
 
 So from here
 
@@ -819,12 +823,12 @@ So from here
 $$
 \begin{align*}
 
-\int_{0}^{N} f(x) \, dx &=  \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x \\ \\
+\int_{0}^{N} f(x) \, dx &=  \sum_{i=0}^{n/\Delta x} f(i \cdot \Delta x) \cdot \Delta x \\ \\
 
 f(x) &= 1 \\
 
-\int_{0}^{x} 1 \, dx &=\sum_{i=0}^{x/\Delta x} 1 \cdot \Delta x \\
-                      &= (x/\Delta x ) \Delta x  \\
+\int_{0}^{x} 1 \, dx &=\sum_{i=0}^{n/\Delta x} 1 \cdot \Delta x \\
+                      &= (n/\Delta x ) \Delta x  \\
                       &= x
 
 \end{align*}
@@ -834,16 +838,20 @@ $$
 ### $\int x \, dx = \frac{1}{2}x^2 + C$
 $$
 \begin{align*}
-\int_{0}^{N} f(x) \, dx &= \lim_{{\Delta x \to 0}} \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x  \\
+\int_{0}^{N} f(x) \, dx &= \lim_{{\Delta n \to 0}} \sum_{i=0}^{n/\Delta x} f(i \cdot \Delta x) \cdot \Delta x  \\
 
 
 
 
-\int_{0}^{x} x \, dx &= \lim_{{\Delta x \to 0}} \sum_{i=0}^{x/\Delta x} (i \cdot \Delta x) \cdot \Delta x \\
+\int_{0}^{x} x \, dx &= \lim_{{\Delta n \to 0}} \sum_{i=0}^{n/\Delta x} (i \cdot \Delta x) \cdot \Delta x \\
 
-      &= \sum_{i=0}^{x/\Delta x} (i ) \cdot \Delta x^2  \\
 
-      &= [\frac{x^2}{2 \cdot \Delta x^2} +  \frac{x}{2 \cdot \Delta x}] \cdot  \Delta x^2
+\because \frac{n(n + 1)}{2} &= \frac{ n^2 + n}{2}  = \frac{n^2 }{2}+\frac{n }{2} \\
+
+
+      &= \sum_{i=0}^{n/\Delta x} (i ) \cdot \Delta x^2  \\
+
+      &= [\frac{n^2}{2 \cdot \Delta x^2} \Delta x +  \frac{n}{2 \cdot \Delta x} \Delta x] \cdot  \Delta x
 
 
 
@@ -859,26 +867,84 @@ $$
 
 
 
+
+
 $$
 \begin{align*}
-\int_{0}^{N} f(x) \, dx &= \lim_{{\Delta x \to 0}} \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x
+
+\int_{0}^{N} f(x) \, dx &= \lim_{{\Delta n \to 0}} \sum_{i=0}^{n/\Delta x} f(i \cdot \Delta x) \cdot \Delta x \\
+
+
+\int_{0}^{N} x^2 \, dx &= \lim_{{\Delta n \to 0}} \sum_{i=0}^{n/\Delta x} (i \cdot \Delta x)^2 \cdot \Delta x \\ \\
+
+
+\because \frac{n(n + 1)(2n + 1)}{6} &= \frac{2n^3 + 3n^2 + n}{6}  = \frac{n^3 }{3}+\frac{n^2 }{2}+\frac{n}{6} \\
+
+
+
+
+\sum_{i=0}^{n/\Delta x} (i \cdot \Delta x)^2 \cdot \Delta x  &= \cdot [
+  
+                                                                      \frac{n^3 \cdot \Delta x^2 }{3\,{\mathrm{\Delta x}}^3 }
+                                                                    + \frac{n^2 \cdot \Delta x^2 }{2\,{\mathrm{\Delta x}}^2 }
+                                                                    + \frac{n \cdot \Delta x^2 }{6\,\mathrm{\Delta x}}
+
+
+                                                                            ] \Delta x  =\frac{n^3}{3} \\
+
+
 
 \end{align*}
 $$
 
 
+
+Lets try to find pattern in sum of $n , n^2 ,n^3, n^4$
+
+
 $$
-\int_{0}^{N} x^2 \, dx = \lim_{{\Delta x \to 0}} \sum_{i=0}^{N/\Delta x} (i \cdot \Delta x)^2 \cdot \Delta xn \\ \\
 
-\sum_{i=0}^{x/\Delta x} i^2 \cdot \Delta x^3 = \Delta x^3 \cdot \frac{\frac{x}{\Delta x}(\frac{x}{\Delta x} + 1)(2\frac{x}{\Delta x} + 1)}{6} =\frac{x^3}{3}
+\begin{align*}
+\sum{n^3} = \left(\frac{n(n + 1)}{2}\right)^2 &= \left(\frac{n^2 + n}{2}\right)^2 \\
+&= \frac{n^4 + 2n^3 + n^2}{4}. \\
+
+& = \frac{n^4 }{4}+\frac{n^3 }{2}+\frac{n^2 }{4}
+\end{align*}
+$$
+
+Ops, i found these forumas on https://en.wikipedia.org/wiki/Faulhaber's_formula
+
 $$
 
 
 
-### $\int \cos(x) \, dx = \sin(x) + C$
+\begin{array}{c}
+\displaystyle
+\begin{aligned}
+\sum_{k=1}^{n}k^{0} &= \frac{1}{1} n \\
+\sum_{k=1}^{n}k^{1} &= \frac{1}{2} \left(n^2 + \frac{2}{2}n\right) \\
+\sum_{k=1}^{n}k^{2} &= \frac{1}{3} \left(n^3 + \frac{3}{2}n^2 + \frac{3}{6}n\right) \\
+\sum_{k=1}^{n}k^{3} &= \frac{1}{4} \left(n^4 + \frac{4}{2}n^3 + \frac{6}{6}n^2 + 0n\right) \\
+\sum_{k=1}^{n}k^{4} &= \frac{1}{5} \left(n^5 + \frac{5}{2}n^4 + \frac{10}{6}n^3 + 0n^2 - \frac{5}{30}n\right) \\
+\sum_{k=1}^{n}k^{5} &= \frac{1}{6} \left(n^6 + \frac{6}{2}n^5 + \frac{15}{6}n^4 + 0n^3 - \frac{15}{30}n^2 + 0n\right) \\
+\sum_{k=1}^{n}k^{6} &= \frac{1}{7} \left(n^7 + \frac{7}{2}n^6 + \frac{21}{6}n^5 + 0n^4 - \frac{35}{30}n^3 + 0n^2 + \frac{7}{42}n\right).
+\end{aligned}
+\end{array}
 
-I have no clue
+$$
 
+
+
+It appears that as we delve into more complex mathematical operations involving higher powers, humans may struggle to compute them from first principles. In light of this, it seems prudent to consider the Fundamental Theorem of Calculus.
+
+
+
+
+
+
+
+
+# Fundamental Theorm of Calculus
 
 We want to show that:
 
@@ -922,6 +988,54 @@ $\int_{0}^{N} f(x) \, dx = F(N) - F(0)$
 
 This completes the proof of the Fundamental Theorem of Calculus.
 
+# Difference equations for Anti Derivative
+
+
+I believe it's necessary for us to compile a set of difference equations, as relying solely on retroactively analyzing equations is the only course of action available to us.
+
+
+$$
+\begin{aligned}
+xdx &= \frac{(x + dx)^2 - x^2}{2}\\
+x^2dx &= \frac{(x + dx)^3 - x^3}{3}\\
+x^3dx &= \frac{(x + dx)^4 - x^4}{4}\\
+x^5dx &= \frac{(x + dx)^5 - x^5}{5}\\
+\end{aligned}
+$$
+
+suppose if any bigger number would be there instead of dx let say $\Delta X$ then equations would have looked like
+
+$$
+\begin{aligned}
+
+
+ x\Delta X +
+\frac{(\Delta X)^2}{2} &=  
+
+                            \frac{(x + \Delta X)^2 - x^2}{2} \\ 
+
+ x^2\Delta X
++ x(\Delta X)^2 +\frac{ (\Delta X)^3 }{3} &= 
+                                                \frac{(x + \Delta X)^3 - x^3}{3}  \\
+
+
+ x^3\Delta x
++ \frac{ 3x^2(\Delta x)^2}{2} + x(\Delta x)^3 + \frac{(\Delta x)^4}{2} &= 
+                                                                            \frac{(x + \Delta X)^4 - x^4}{4}  \\
+
+
+
+
+\end{aligned}
+
+
+$$
+
+
+
+### $\int \cos(x) \, dx = \sin(x) + C$
+
+To be continued
 
 
 
