@@ -1045,7 +1045,7 @@ $$
 xdx &= \frac{(x + dx)^2 - x^2}{2}\\
 x^2dx &= \frac{(x + dx)^3 - x^3}{3}\\
 x^3dx &= \frac{(x + dx)^4 - x^4}{4}\\
-x^5dx &= \frac{(x + dx)^5 - x^5}{5}\\
+x^4dx &= \frac{(x + dx)^5 - x^5}{5}\\
 \end{aligned}
 $$
 
