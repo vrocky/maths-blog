@@ -678,6 +678,89 @@ f(g(x+h)) &amp;= f(B_0 + B_1 h + B_2 h^2 + \ldots ) \\\\
 <p>from this expansion it is evident that <span
 class="math inline">\(\frac{d}{dx}\cos(x^2) = -
 \sin(x^2)(2x)\)</span></p>
+<h2 id="l-hospital-rule">L Hospital Rule</h2>
+<p>Statement: If the limit of the quotient of two functions <span
+class="math inline">\(f(x)\)</span> and <span
+class="math inline">\(g(x)\)</span> as <span
+class="math inline">\(x\)</span> approaches <span
+class="math inline">\(a\)</span> is an indeterminate form <span
+class="math inline">\(0/0\)</span> or <span
+class="math inline">\(\infty/\infty\)</span>, and both <span
+class="math inline">\(f(x)\)</span> and <span
+class="math inline">\(g(x)\)</span> are differentiable functions near
+<span class="math inline">\(x = a\)</span> (except possibly at <span
+class="math inline">\(a\)</span>), then the limit can be found by taking
+the derivative of the numerator and denominator and evaluating the limit
+again.</p>
+<p>$$ <em>{{x a}} = </em>{{x a}} </p>
+<p>$$</p>
+<h3 id="proof-1">Proof:</h3>
+<ol type="1">
+<li>Start with the indeterminate form:</li>
+</ol>
+<p><span class="math display">\[
+\lim_{{x \to a}} \frac{f(x)}{g(x)} = \frac{0}{0} \text{ or }
+\frac{\infty}{\infty}.
+\]</span></p>
+<ol type="1">
+<li>Write the Taylor series expansion of both <span
+class="math inline">\(f(x)\)</span> and <span
+class="math inline">\(g(x)\)</span> centered at <span
+class="math inline">\(x = a\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+f(x) = f(a) + f&#39;(a)h + \frac{f&#39;&#39;(a)}{2}h^2 + \ldots
+\]</span></p>
+<p><span class="math display">\[
+g(x) = g(a) + g&#39;(a)h + \frac{g&#39;&#39;(a)}{2}h^2 + \ldots
+\]</span></p>
+<ol type="1">
+<li><p>Since we have an indeterminate form, <span
+class="math inline">\(f(a)\)</span> and <span
+class="math inline">\(g(a)\)</span> should both be <span
+class="math inline">\(0\)</span> (for <span
+class="math inline">\(0/0\)</span>) or <span
+class="math inline">\(\infty\)</span> (for <span
+class="math inline">\(\infty/\infty\)</span>).</p></li>
+<li><p>Divide both the numerator and denominator by <span
+class="math inline">\(h\)</span>:</p></li>
+</ol>
+<p><span class="math display">\[
+\lim_{{x \to a}} \frac{f(x)}{g(x)} = \lim_{{x \to a}} \frac{f(a) +
+f&#39;(a)h + \frac{f&#39;&#39;(a)}{2}h^2 + \ldots}{g(a) + g&#39;(a)h +
+\frac{g&#39;&#39;(a)}{2}h^2 + \ldots}
+\]</span></p>
+<ol type="1">
+<li>Cancel out the common factor of <span
+class="math inline">\(h\)</span> in the numerator and denominator:</li>
+</ol>
+<p><span class="math display">\[
+\lim_{{x \to a}} \frac{f(x)}{g(x)} = \lim_{{x \to a}} \frac{f&#39;(a) +
+\frac{f&#39;&#39;(a)}{2}h + \ldots}{g&#39;(a) +
+\frac{g&#39;&#39;(a)}{2}h + \ldots}
+\]</span></p>
+<ol type="1">
+<li>As <span class="math inline">\(x\)</span> approaches <span
+class="math inline">\(a\)</span>, all terms with <span
+class="math inline">\(h\)</span> in the numerator and denominator go to
+zero. We are then left with:</li>
+</ol>
+<p><span class="math display">\[
+\lim_{{x \to a}} \frac{f(x)}{g(x)} = \frac{f&#39;(a)}{g&#39;(a)}
+\]</span></p>
+<ol type="1">
+<li>The limit of <span class="math inline">\(\frac{f(x)}{g(x)}\)</span>
+as <span class="math inline">\(x\)</span> approaches <span
+class="math inline">\(a\)</span> is equal to the limit of <span
+class="math inline">\(\frac{f&#39;(x)}{g&#39;(x)}\)</span> as <span
+class="math inline">\(x\)</span> approaches <span
+class="math inline">\(a\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+\lim_{{x \to a}} \frac{f(x)}{g(x)} = \lim_{{x \to a}}
+\frac{f&#39;(x)}{g&#39;(x)}
+\]</span></p>
+<p>This completes the proof of L’Hôpital’s Rule.</p>
 <h2 id="division-properties-and-infinte-series">Division Properties and
 Infinte series</h2>
 <p>Lets work for <span
@@ -808,7 +891,7 @@ series converges</h3>
 class="math inline">\(\frac{1}{x+1} = \sum_{n=0}^{\infty} (-1)^n
 \frac{1}{x}^n\)</span> , For <span class="math inline">\(|x| &gt;
 1\)</span>, series converges</h3>
-<h3 id="proof-1">Proof:</h3>
+<h3 id="proof-2">Proof:</h3>
 <p>We can proof the both with our long division that we take as
 elementary proof,</p>
 <p>but lets me give you traditional words on it for the reference :</p>
@@ -861,7 +944,7 @@ class="math inline">\(\frac{1}{ax+by}= \frac{1}{bx} \sum_{n=0}^{\infty}
 (-1)^n \left(\frac{by}{ax}\right)^n\)</span> , For <span
 class="math inline">\(|\frac{y}{x}| &lt; 1\)</span>, series
 converges</h3>
-<h3 id="proof-2">Proof:</h3>
+<h3 id="proof-3">Proof:</h3>
 <p>$$ <span class="math display">\[\begin{align*}
   \frac{1}{k+1} &amp;= \sum_{n=0}^{\infty} (-1)^n k^n \\
 
@@ -879,7 +962,7 @@ involved</h2>
 <h3 id="fracddxsecx-secx-tanx"><span
 class="math inline">\(\frac{d}{dx}[\sec(x)] = \sec(x)
 \tan(x)\)</span></h3>
-<h3 id="proof-3">Proof:</h3>
+<h3 id="proof-4">Proof:</h3>
 <p>$$ <span class="math display">\[\begin{align*}
 \sec(x + h) &amp;= \frac{1}{\cos(x + h)} \\
 
@@ -925,7 +1008,7 @@ also</p>
 <h3 id="fracddxcscx--cscx-cotx"><span
 class="math inline">\(\frac{d}{dx}[\csc(x)] = -\csc(x)
 \cot(x)\)</span></h3>
-<h3 id="proof-4">Proof:</h3>
+<h3 id="proof-5">Proof:</h3>
 <p>$$ <span class="math display">\[\begin{align*}
 \csc(x + h) &amp;= \frac{1}{\sin(x + h)}  \\
 
@@ -941,7 +1024,7 @@ class="math inline">\((-1)^2\)</span></p>
 <p>this gives us the requried formula</p>
 <h3 id="fracddxtanx-sec2x"><span
 class="math inline">\(\frac{d}{dx}(\tan(x)) = \sec^2(x)\)</span></h3>
-<h3 id="proof-5">Proof:</h3>
+<h3 id="proof-6">Proof:</h3>
 <p>$$ <span class="math display">\[\begin{align*}
 \tan(x+h)  &amp;= \frac{\sin(x+h)}{\cos(x+h)} \\
 \because \sin(x + \Delta x) &amp;= \sin(x)\cos(\Delta x) +
@@ -991,7 +1074,7 @@ C_0 \cos(x) + C_1\sin(x) &amp;= 1 + \tan^2(x) \\
 \end{align*}\]</span> $$</p>
 <h2 id="fracddxlogx-frac1x"><span
 class="math inline">\(\frac{d}{dx}(\log(x)) = \frac{1}{x}\)</span></h2>
-<h3 id="proof-6">Proof:</h3>
+<h3 id="proof-7">Proof:</h3>
 <p>Lets expand <span class="math inline">\(\log(x+h)\)</span> in terms
 of power of <span class="math inline">\(h\)</span></p>
 <p><span class="math display">\[
@@ -1260,6 +1343,233 @@ x^3\Delta x
 <p>$$</p>
 <h3 id="int-cosx-dx-sinx-c"><span class="math inline">\(\int \cos(x) \,
 dx = \sin(x) + C\)</span></h3>
-<p>To be continued</p>
+$$
+<span class="math display">\[\begin{aligned}
+
+\int_{0}^{\pi} \cos(x) dx &amp;= \sum_{i = 0}^{n / \Delta x} \cos(i
+\cdot \Delta x) \cdot \Delta x  \\
+                          &amp;=  \\
+                        
+\because sin ⁡ \left(\right. x + \Delta x \left.\right) &amp;= sin ⁡
+\left(\right. x \left.\right) cos ⁡ \left(\right. \Delta x \left.\right)
++ cos ⁡ \left(\right. x \left.\right) sin ⁡ \left(\right. \Delta x
+\left.\right) \\
+
+&amp;\approx sin ⁡ \left(\right. x \left.\right) + cos ⁡ \left(\right. x
+\left.\right) \Delta x  \\
+
+
+\therefore \cos(x) \Delta x &amp;= \sin(x + \Delta x) - \sin (x)  \\
+
+
+\int_{0}^{\pi} \cos(x) \, dx &amp;= \sum_{i = 0}^{n / \Delta x} \cos(i
+\cdot \Delta x) \cdot \Delta x  \\
+
+                              &amp;= \sum_{i = 0}^{n / \Delta x} (\sin(i
+\cdot \Delta x + \Delta x) - \sin(i \cdot \Delta x)) \cdot \Delta
+x    \\  
+
+                            \because \text{This is a telescopic
+series}  \\
+                            
+                             &amp;= \sin(n)     
+
+
+\end{aligned}\]</span>
+<p>$$</p>
+<p>We now know that we need to know prior that what could be the
+solution for the telescoping series for the given summation problem</p>
+<p>Note :<br />
+if <span class="math inline">\(\Delta x\)</span> would not be infinitely
+small , Lets say any bigger number <span class="math inline">\(\Delta
+X\)</span> then,</p>
+$$
+<span class="math display">\[\begin{aligned}
+
+\because sin ⁡ \left(\right. x + \Delta X \left.\right) &amp;= sin ⁡
+\left(\right. x \left.\right) cos ⁡ \left(\right. \Delta X \left.\right)
++ cos ⁡ \left(\right. x \left.\right) sin ⁡ \left(\right. \Delta X
+\left.\right) \\
+
+
+\end{aligned}\]</span>
+<p>$$</p>
+<p>Instead of</p>
+<p>$$</p>
+<p>(x) x = (x + x) - (x)</p>
+<p>$$</p>
+<p>We get $$</p>
+<p>(x + X) = (x) (X) + (x) (X) \</p>
+<p>(x + X) - (x) (X) = (x) (X) \</p>
+<p>(x) (X) = (x + X) - (x) (X)</p>
+<p>$$</p>
+<p>From here we can see that we are not actually taking,</p>
+$$
+<span class="math display">\[\begin{aligned}
+\int_{0}^{\pi} \cos(x) dx &amp;= \sum_{i = 0}^{n / \Delta x} \cos(i
+\cdot \Delta x) \cdot \Delta x  \\
+                          &amp;= \sum_{i = 0}^{n / \Delta x} \cos(i
+\cdot \Delta X) \cdot \sin(\Delta X) \\
+                          &amp;= \sum_{i = 0}^{n / \Delta x} \sin(x +
+\Delta X) - \sin(x) \cos(\Delta X)
+
+\end{aligned}\]</span>
+<p>$$</p>
+<h3 id="int-sinx-dx-cosx-c"><span class="math inline">\(\int \sin(x) \,
+dx = \cos(x) + C\)</span></h3>
+$$
+<span class="math display">\[\begin{aligned}
+\int_{0}^{\pi} \sin(x) \, dx &amp;= \sum_{i = 0}^{n} \sin(i \cdot \Delta
+x) \cdot \Delta x  \\
+
+
+
+\because cos ⁡ \left(\right. x + \Delta x \left.\right)
+
+&amp;= cos ⁡ \left(\right. x \left.\right) cos ⁡ \left(\right. \Delta x
+\left.\right) - sin ⁡ \left(\right. x \left.\right) sin ⁡ \left(\right.
+\Delta x \left.\right)  \\
+
+
+cos ⁡ \left(\right. x + \Delta x \left.\right)  &amp;\approx cos ⁡
+\left(\right. x \left.\right) - sin ⁡ \left(\right. x \left.\right)
+\Delta x \\
+
+\therefore   \sin(x) \Delta x &amp;= -[\cos(x + \Delta x) -
+\cos(x)]   \\
+
+
+
+                              &amp;= -1 \cdot [\sum_{i = 0}^{n/\Delta x}
+(\cos((i + 1) \cdot \Delta x) - \cos(i \cdot \Delta x)) \cdot \Delta x
+]\\
+
+       \because \text{This is a telescopic series}  \\
+                              &amp;= - \cos(n)
+
+
+
+
+\end{aligned}\]</span>
+<p>$$</p>
+<h3 id="int-frac1x-dx-lnx-c"><span class="math inline">\(\int
+\frac{1}{x} \, dx = \ln(|x|) + C\)</span></h3>
+<p>We know from previous work,</p>
+<p>$$</p>
+<p><span class="math display">\[\begin{align*}
+
+
+\log(x + h) &amp;= \log(x) +
+\log(((1+\frac{h}{x})^\frac{x}{h})^\frac{h}{x} ) \\
+            &amp; = \log(x) + \log((e)^\frac{h}{x} ) \\
+            &amp;= \log(x) + \frac{h}{x}
+\end{align*}\]</span> $$</p>
+<p>which tells us, $$ = (x+h) - (x)</p>
+<p>$$</p>
+<p>And putting this into our summation formula we can proof <span
+class="math inline">\(\int \frac{1}{x} \, dx = \ln(|x|) + C\)</span></p>
+<h2 id="integration-by-parts">Integration by parts</h2>
+<p>Intergration</p>
+<p>$$ u , dv = uv - v , du</p>
+<p>$$</p>
+<p>$$</p>
+<p>f(x) , g’(x) , dx = f(x) , g(x) - g(x) , f’(x) , dx $$</p>
+<p><span class="math display">\[
+\int f(x) \, g(x) \, dx = f(x) \, G(x) - \int f&#39;(x) \, G(x) \, dx
+\]</span></p>
+<h3 id="proof-8">Proof</h3>
+<p>Certainly! The integration by parts formula is derived from the
+product rule for differentiation. It states:</p>
+<p><span class="math display">\[
+\int u \, dv = uv - \int v \, du
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(u\)</span> is a differentiable function
+of <span class="math inline">\(x\)</span>.</li>
+<li><span class="math inline">\(dv\)</span> is a differentiable function
+of <span class="math inline">\(x\)</span> (often chosen as <span
+class="math inline">\(dv/dx\)</span> or <span
+class="math inline">\(dx\)</span> itself).</li>
+<li><span class="math inline">\(du\)</span> is the derivative of <span
+class="math inline">\(u\)</span> with respect to <span
+class="math inline">\(x\)</span>.</li>
+<li><span class="math inline">\(v\)</span> is the integral of <span
+class="math inline">\(dv\)</span> with respect to <span
+class="math inline">\(x\)</span>.</li>
+</ul>
+<p>Here’s a proof of the integration by parts formula using the
+fundamental theorem of calculus:</p>
+<p>We start with the product rule for differentiation:</p>
+<p><span class="math display">\[
+(uv)&#39; = u \, dv + v \, du
+\]</span></p>
+<p>Now, let’s integrate both sides with respect to <span
+class="math inline">\(x\)</span> from <span
+class="math inline">\(a\)</span> to <span
+class="math inline">\(b\)</span>:</p>
+<p><span class="math display">\[
+\int_{a}^{b} (u \, dv + v \, du) \, dx = \int_{a}^{b} (uv)&#39; \, dx
+\]</span></p>
+<p>By the fundamental theorem of calculus, the left side becomes:</p>
+<p><span class="math display">\[
+\int_{a}^{b} u \, dv \, dx + \int_{a}^{b} v \, du \, dx = [uv]_{a}^{b}
+\]</span></p>
+<p>where <span class="math inline">\([uv]_{a}^{b}\)</span> represents
+the evaluation of <span class="math inline">\(uv\)</span> at the upper
+and lower limits of integration.</p>
+<p>So, we have:</p>
+<p><span class="math display">\[
+\int_{a}^{b} u \, dv \, dx + \int_{a}^{b} v \, du \, dx = uv(b) - uv(a)
+\]</span></p>
+<p>Now, we can isolate the integral of <span class="math inline">\(u \,
+dv\)</span> on one side:</p>
+<p><span class="math display">\[
+\int_{a}^{b} u \, dv \, dx = uv(b) - uv(a) - \int_{a}^{b} v \, du \, dx
+\]</span></p>
+<p>Finally, if we take the limit as <span
+class="math inline">\(a\)</span> approaches negative infinity and <span
+class="math inline">\(b\)</span> approaches positive infinity (assuming
+the integrals converge), we get the standard integration by parts
+formula:</p>
+<p><span class="math display">\[
+\int u \, dv = uv - \int v \, du
+\]</span></p>
+<p>This completes the proof of the integration by parts formula.</p>
+<h2 id="alternative-proof-work">Alternative Proof Work</h2>
+<p>$$</p>
+<p>f(x + x) = A_0 + A_1 (x) + A_3 (x)^2 + A_4 (x)^3 + + A_{n+1} (
+x)^n\</p>
+<p>G(x + x) = B_0 + B_1 (x) + B_3 (x)^2 + B_4 (x)^3 + + B_{n+1} ( x)^n
+$$</p>
+<p>$$</p>
+<p>G(x + x) = G(x) + g(x) (x) + B_3 (x)^2 + B_4 (x)^3 + + B_{n+1} ( x)^n
+$$</p>
+<p>From the formula,</p>
+<p>$$</p>
+<p><em>{0}^{N} f(x) , dx = </em>{{x }} _{i=0}^{n/x} f(i x) x $$</p>
+<p>Here $$ <span class="math display">\[\begin{align*}
+\int f(x) \, g(x) \, dx &amp;= \lim_{{\Delta x \to 0}}
+\sum_{i=0}^{n/\Delta x} f(i \cdot \Delta x) \cdot g(i \cdot \Delta x)
+\cdot \Delta x \\
+
+                        &amp;=   \left[ \sum_{i=0}^{\frac{n}{\Delta x}}
+\left( f(i \cdot \Delta x) - f((i-1) \cdot \Delta x) \right) \right]
+\cdot
+
+                  \sum_{i=0}^{n/\Delta x}  g(i \cdot \Delta x)
+
+                 \,  -  \,
+
+                   \sum_{i=0}^{n/\Delta x} \left[ A_1 \cdot
+\sum_{i=0}^{\frac{n}{\Delta x}} g(i \cdot \Delta x) \right]
+
+
+\end{align*}\]</span></p>
+<p>$$</p>
+<p>I guess this is getting complex but surely if we work we can see
+through it, but you can go to previous proof and visualize expansion
+every time they talk about differentiation. We can easily work to this
+proof with that technique.</p>
 </body>
 </html>

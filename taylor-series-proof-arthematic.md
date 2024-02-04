@@ -447,6 +447,65 @@ f(g(x+h)) &= f(B_0 + B_1 h + B_2 h^2 + \ldots ) \\\\
 from this expansion it is evident that $\frac{d}{dx}\cos(x^2) = - \sin(x^2)(2x)$ 
 
 
+## L Hospital Rule
+
+Statement: If the limit of the quotient of two functions $f(x)$ and $g(x)$ as $x$ approaches $a$ is an indeterminate form $0/0$ or $\infty/\infty$, and both $f(x)$ and $g(x)$ are differentiable functions near $x = a$ (except possibly at $a$), then the limit can be found by taking the derivative of the numerator and denominator and evaluating the limit again.
+
+$$
+\lim_{{x \to a}} \frac{f(x)}{g(x)} = \lim_{{x \to a}} \frac{f'(x)}{g'(x)}
+
+$$
+
+### Proof:
+
+1. Start with the indeterminate form:
+
+$$
+\lim_{{x \to a}} \frac{f(x)}{g(x)} = \frac{0}{0} \text{ or } \frac{\infty}{\infty}.
+$$
+
+1. Write the Taylor series expansion of both $f(x)$ and $g(x)$ centered at $x = a$:
+
+$$
+f(x) = f(a) + f'(a)h + \frac{f''(a)}{2}h^2 + \ldots
+$$
+
+$$
+g(x) = g(a) + g'(a)h + \frac{g''(a)}{2}h^2 + \ldots
+$$
+
+1. Since we have an indeterminate form, $f(a)$ and $g(a)$ should both be $0$ (for $0/0$) or $\infty$ (for $\infty/\infty$).
+
+
+2. Divide both the numerator and denominator by $h$:
+
+
+
+$$
+\lim_{{x \to a}} \frac{f(x)}{g(x)} = \lim_{{x \to a}} \frac{f(a) + f'(a)h + \frac{f''(a)}{2}h^2 + \ldots}{g(a) + g'(a)h + \frac{g''(a)}{2}h^2 + \ldots}
+$$
+
+1. Cancel out the common factor of $h$ in the numerator and denominator:
+
+$$
+\lim_{{x \to a}} \frac{f(x)}{g(x)} = \lim_{{x \to a}} \frac{f'(a) + \frac{f''(a)}{2}h + \ldots}{g'(a) + \frac{g''(a)}{2}h + \ldots}
+$$
+
+1. As $x$ approaches $a$, all terms with $h$ in the numerator and denominator go to zero. We are then left with:
+
+$$
+\lim_{{x \to a}} \frac{f(x)}{g(x)} = \frac{f'(a)}{g'(a)}
+$$
+
+1. The limit of $\frac{f(x)}{g(x)}$ as $x$ approaches $a$ is equal to the limit of $\frac{f'(x)}{g'(x)}$ as $x$ approaches $a$:
+
+$$
+\lim_{{x \to a}} \frac{f(x)}{g(x)} = \lim_{{x \to a}} \frac{f'(x)}{g'(x)}
+$$
+
+This completes the proof of L'Hôpital's Rule.
+
+
 ## Division Properties and Infinte series
 
 Lets work for $\frac{d}{dx}\frac{1}{x}$ or $\frac{d}{dx}{x^{-1}}$ 
@@ -1081,7 +1140,288 @@ $$
 
 ### $\int \cos(x) \, dx = \sin(x) + C$
 
-To be continued
+$$
+\begin{aligned}
+
+\int_{0}^{\pi} \cos(x) dx &= \sum_{i = 0}^{n / \Delta x} \cos(i \cdot \Delta x) \cdot \Delta x  \\
+                          &=  \\
+                        
+\because sin ⁡ \left(\right. x + \Delta x \left.\right) &= sin ⁡ \left(\right. x \left.\right) cos ⁡ \left(\right. \Delta x \left.\right) + cos ⁡ \left(\right. x \left.\right) sin ⁡ \left(\right. \Delta x \left.\right) \\ 
+
+&\approx sin ⁡ \left(\right. x \left.\right) + cos ⁡ \left(\right. x \left.\right) \Delta x  \\
+
+
+\therefore \cos(x) \Delta x &= \sin(x + \Delta x) - \sin (x)  \\
+
+
+\int_{0}^{\pi} \cos(x) \, dx &= \sum_{i = 0}^{n / \Delta x} \cos(i \cdot \Delta x) \cdot \Delta x  \\
+
+                              &= \sum_{i = 0}^{n / \Delta x} (\sin(i \cdot \Delta x + \Delta x) - \sin(i \cdot \Delta x)) \cdot \Delta x    \\  
+
+                            \because \text{This is a telescopic series}  \\
+                            
+                             &= \sin(n)     
+
+
+\end{aligned}
+
+
+$$
+
+We now know that we need to know prior that what could be the solution for the telescoping series for the given summation problem
+
+Note :  
+if $\Delta x$ would not be infinitely small , Lets say any bigger number $\Delta X$ then, 
+
+$$
+\begin{aligned}
+
+\because sin ⁡ \left(\right. x + \Delta X \left.\right) &= sin ⁡ \left(\right. x \left.\right) cos ⁡ \left(\right. \Delta X \left.\right) + cos ⁡ \left(\right. x \left.\right) sin ⁡ \left(\right. \Delta X \left.\right) \\ 
+
+
+\end{aligned}
+$$
+
+
+Instead of 
+
+$$
+
+\cos(x) \Delta x = \sin(x + \Delta x) - \sin (x) 
+
+$$
+
+We get 
+$$
+
+\sin(x + \Delta X) = \sin(x) \cos(\Delta X) + \cos(x) \sin(\Delta X) \\ 
+
+\sin(x + \Delta X) - \sin(x) \cos(\Delta X) = \cos(x) \sin(\Delta X) \\
+
+\therefore \cos(x) \sin(\Delta X)  =  \sin(x + \Delta X) - \sin(x) \cos(\Delta X) 
+
+
+$$
+
+From here we can see that we are not actually taking,
+
+$$
+\begin{aligned}
+\int_{0}^{\pi} \cos(x) dx &= \sum_{i = 0}^{n / \Delta x} \cos(i \cdot \Delta x) \cdot \Delta x  \\
+                          &= \sum_{i = 0}^{n / \Delta x} \cos(i \cdot \Delta X) \cdot \sin(\Delta X) \\
+                          &= \sum_{i = 0}^{n / \Delta x} \sin(x + \Delta X) - \sin(x) \cos(\Delta X) 
+
+\end{aligned}
+$$
+
+
+
+
+
+
+
+### $\int \sin(x) \, dx = \cos(x) + C$
+
+
+$$
+\begin{aligned}
+\int_{0}^{\pi} \sin(x) \, dx &= \sum_{i = 0}^{n} \sin(i \cdot \Delta x) \cdot \Delta x  \\
+
+
+
+\because cos ⁡ \left(\right. x + \Delta x \left.\right) 
+
+&= cos ⁡ \left(\right. x \left.\right) cos ⁡ \left(\right. \Delta x \left.\right) - sin ⁡ \left(\right. x \left.\right) sin ⁡ \left(\right. \Delta x \left.\right)  \\
+
+
+cos ⁡ \left(\right. x + \Delta x \left.\right)  &\approx cos ⁡ \left(\right. x \left.\right) - sin ⁡ \left(\right. x \left.\right) \Delta x \\
+
+\therefore   \sin(x) \Delta x &= -[\cos(x + \Delta x) - \cos(x)]   \\
+
+
+
+                              &= -1 \cdot [\sum_{i = 0}^{n/\Delta x} (\cos((i + 1) \cdot \Delta x) - \cos(i \cdot \Delta x)) \cdot \Delta x ]\\
+
+       \because \text{This is a telescopic series}  \\
+                              &= - \cos(n)
+
+
+
+
+\end{aligned}
+
+$$
+
+
+### $\int \frac{1}{x} \, dx = \ln(|x|) + C$
+
+We know from previous work,
+
+$$
+
+\begin{align*}
+
+
+\log(x + h) &= \log(x) +
+\log(((1+\frac{h}{x})^\frac{x}{h})^\frac{h}{x} ) \\
+            & = \log(x) + \log((e)^\frac{h}{x} ) \\
+            &= \log(x) + \frac{h}{x}
+\end{align*}
+$$
+
+which tells us, 
+$$
+\frac{h}{x} = \log(x+h) - \log(x)
+
+$$
+
+And putting this into our summation formula we can proof $\int \frac{1}{x} \, dx = \ln(|x|) + C$
+
+
+## Integration by parts
+
+
+Intergration 
+
+
+$$
+\int u \, dv = uv - \int v \, du
+
+
+$$
+
+
+$$
+
+\int f(x) \, g'(x) \, dx = f(x) \, g(x) - \int g(x) \, f'(x) \, dx
+$$
+
+
+$$
+\int f(x) \, g(x) \, dx = f(x) \, G(x) - \int f'(x) \, G(x) \, dx
+$$
+
+
+
+### Proof
+
+Certainly! The integration by parts formula is derived from the product rule for differentiation. It states:
+
+$$
+\int u \, dv = uv - \int v \, du
+$$
+
+where:
+
+- $u$ is a differentiable function of $x$.
+- $dv$ is a differentiable function of $x$ (often chosen as $dv/dx$ or $dx$ itself).
+- $du$ is the derivative of $u$ with respect to $x$.
+- $v$ is the integral of $dv$ with respect to $x$.
+
+Here's a proof of the integration by parts formula using the fundamental theorem of calculus:
+
+We start with the product rule for differentiation:
+
+$$
+(uv)' = u \, dv + v \, du
+$$
+
+Now, let's integrate both sides with respect to $x$ from $a$ to $b$:
+
+$$
+\int_{a}^{b} (u \, dv + v \, du) \, dx = \int_{a}^{b} (uv)' \, dx
+$$
+
+By the fundamental theorem of calculus, the left side becomes:
+
+$$
+\int_{a}^{b} u \, dv \, dx + \int_{a}^{b} v \, du \, dx = [uv]_{a}^{b}
+$$
+
+where $[uv]_{a}^{b}$ represents the evaluation of $uv$ at the upper and lower limits of integration.
+
+So, we have:
+
+$$
+\int_{a}^{b} u \, dv \, dx + \int_{a}^{b} v \, du \, dx = uv(b) - uv(a)
+$$
+
+Now, we can isolate the integral of $u \, dv$ on one side:
+
+$$
+\int_{a}^{b} u \, dv \, dx = uv(b) - uv(a) - \int_{a}^{b} v \, du \, dx
+$$
+
+Finally, if we take the limit as $a$ approaches negative infinity and $b$ approaches positive infinity (assuming the integrals converge), we get the standard integration by parts formula:
+
+$$
+\int u \, dv = uv - \int v \, du
+$$
+
+This completes the proof of the integration by parts formula.
+
+
+## Alternative Proof  Work
+
+
+$$
+
+f(x +  \Delta x) = A_0 + A_1 (\Delta x) +
+A_3 (\Delta x)^2 + A_4 (\Delta x)^3 + \ldots + A_{n+1} (\Delta
+x)^n\\
+
+
+G(x +  \Delta x) = B_0 + B_1 (\Delta x) +
+B_3 (\Delta x)^2 + B_4 (\Delta x)^3 + \ldots + B_{n+1} (\Delta
+x)^n
+$$
+
+
+$$
+
+G(x +  \Delta x) = G(x) + g(x) (\Delta x) +
+B_3 (\Delta x)^2 + B_4 (\Delta x)^3 + \ldots + B_{n+1} (\Delta
+x)^n
+$$
+
+
+From the formula,
+
+$$
+
+\int_{0}^{N} f(x) \, dx = \lim_{{\Delta x \to 0}} \sum_{i=0}^{n/\Delta x} f(i \cdot \Delta x) \cdot \Delta x
+$$
+
+Here
+$$
+\begin{align*}
+\int f(x) \, g(x) \, dx &= \lim_{{\Delta x \to 0}} \sum_{i=0}^{n/\Delta x} f(i \cdot \Delta x) \cdot g(i \cdot \Delta x) \cdot \Delta x \\
+
+                        &=   \left[ \sum_{i=0}^{\frac{n}{\Delta x}} \left( f(i \cdot \Delta x) - f((i-1) \cdot \Delta x) \right) \right] \cdot 
+
+                  \sum_{i=0}^{n/\Delta x}  g(i \cdot \Delta x)
+
+                 \,  -  \, 
+
+                   \sum_{i=0}^{n/\Delta x} \left[ A_1 \cdot \sum_{i=0}^{\frac{n}{\Delta x}} g(i \cdot \Delta x) \right]
+
+
+\end{align*}
+
+$$
+
+
+I guess this is getting complex but surely if we work we can see through it, but you can go to previous proof and visualize expansion every time they talk about differentiation. We can easily work to this proof with that technique.
+
+
+
+
+
+
+
+
+
+
 
 
 
