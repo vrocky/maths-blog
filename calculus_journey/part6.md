@@ -1,5 +1,3 @@
-Below is the final, elaborated article for Part VI: Integration from First Principles in your series. In this presentation we define integration as the summing of infinitesimal contributions, and we develop several basic examples—integrating the constant function, $x$, and $x^2$—all without invoking standard terms like “Riemann sum” or “approximation.” Instead, we rely solely on elementary algebra, limits, and known summation formulas to reveal the underlying structure.
-
 # Building Calculus from First Principles
 
 ## Part VI: Integration from First Principles
