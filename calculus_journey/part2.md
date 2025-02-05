@@ -1,5 +1,3 @@
-Below is a complete, enhanced article that is intended as the next installment in your series “Building Calculus from First Principles.” This document continues the elementary, algebraic approach—without invoking geometric interpretations—to show how key differentiation formulas (including the multiplication and chain rules) emerge naturally from the patterns in series expansions. It also discusses the pedagogical benefits of this method, emphasizing how it provides a clear, visible structure to the subject.
-
 # Building Calculus from First Principles
 
 ## Part II: Algebraic Patterns in Differentiation Formulas
